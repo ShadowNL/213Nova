@@ -1,3 +1,45 @@
+<?php
+//connect to DB
+
+$sHost = 'localhost';
+$sUser = 'root';
+$sPass = '';
+$sDB = '213server';
+//zie jij dit beer? mhuahahaha
+//create connection
+$conStr = mysqli_connect($sHost, $sUser, $sPass, $sDB);
+
+// check connection
+if (!($conStr)) {
+    die('Failed to connect to MySQL Database Server - #' . mysqli_connect_errno() . ': ' . mysqli_Connect_error());
+    if (!mysqli_select_db('slb')) {
+        die('Connected to Server, but Failed to Connect to Database - #' . mysqli_connect_errno() . ': ' . mysqli_connect_errno());
+    }
+} else {
+
+}
+
+function test(){
+    global $conStr;
+    $sqlSectoren = 'SELECT * FROM sectoren';
+
+    $result = $conStr->query($sqlSectoren);
+
+    if ($result && $result->num_rows > 0) {
+        //output data of each row
+        while ($row = $result->fetch_assoc()) {
+            echo '<tr>' . "<td>" .
+                '<div class="col-md-12">' .
+                $row["SectorID"] . " " .
+                $row["SectorName"] .
+                '</div>' . '</td>' . '</tr>';
+        }
+    } else {
+        echo "0 results";
+    }
+}
+
+?>
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -22,56 +64,10 @@
             <div class="row row-centered">
                 <div class="col-xs-3 col-centered" style="height: 13%"></div>
             </div>
-            <div class="row row-centered">
-
-                <div class="col-xs-4 col-centered" >
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div class="panel-body" style="height: 20%; padding: 8% 0;  "><center><h2>Applicatie Ontwikkelaar</h2></center></div>
-                        
-                    </div>
-                </div>
-                <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div class="panel-body" style="height: 20%; padding: 8% 0;  "><center><h2>ICT Helpdesk</h2></center></div>
-                        
-                    </div>
-                </div>
-                <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div class="panel-body" style="height: 20%; padding: 8% 0;  "><center><h2>Netwerk Beheer</h2></center></div>
-                       
-                    </div>
-                </div>
-            </div>
-
-            <div class="row row-centered">
-
-                <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div class="panel-body" style="height: 20%;  padding: 7% 0;  "><center><h2>Docent Overzicht</h2></center></div>
-                        
-                    </div>
-                </div>
-                <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div class="panel-body" style="height: 20%; padding: 7% 0;  "><center><h2>Loopbaan Begeleiding</h2></center></div>
-                        
-                    </div>
-                </div>
-                <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div class="panel-body" style="height: 20%; padding: 7% 0;  "><center><h2>Rooster</h2></center></div>
-                        
-                    </div>
-                </div>
-            </div>
 
         </div>
-
-
-
-
-
-
     </body>
 </html>
+<script>
+
+</script>
