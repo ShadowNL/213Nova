@@ -1,3 +1,50 @@
+<?php
+//check if Sector ID is giving with the selection.....yes this is hardcoded hehe
+//check if Sector ID is equal to 1 , 2 or 3 if not redirect to starting page
+if (!isset($_GET['SectorID']) || !in_array($_GET['SectorID'], [1, 2, 3])){
+    echo "<script>window.location.href='/';</script>";
+    die();
+}
+
+$sHost = 'localhost';
+$sUser = 'root';
+$sPass = '';
+$sDB = '213server';
+//zie jij dit beer? mhuahahaha
+//create connection
+$conStr = mysqli_connect($sHost, $sUser, $sPass, $sDB);
+
+// check connection
+if (!($conStr)) {
+    die('Failed to connect to MySQL Database Server - #' . mysqli_connect_errno() . ': ' . mysqli_Connect_error());
+    if (!mysqli_select_db('slb')) {
+        die('Connected to Server, but Failed to Connect to Database - #' . mysqli_connect_errno() . ': ' . mysqli_connect_errno());
+    }
+} else {
+
+}
+$SectorID = $_GET['SectorID'];
+
+function CreateNav(){
+    global $conStr;
+    global $SectorID;
+    $sqlNav = "SELECT * FROM vakken WHERE SectorID =" . $SectorID ;
+
+    $result = $conStr->query($sqlNav);
+
+    if ($result && $result->num_rows > 0) {
+        //output data of each row
+        while ($row = $result->fetch_assoc()) {
+            echo '<tr>' . "<td>" .
+                '<div class="col-md-12">' .
+                $row["Vaknaam"] ."". "</div>" . '</td>' . '</tr>';
+        }
+    } else {
+        echo "Geen vakken in deze sector gevonden";
+    }
+}
+
+?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -15,6 +62,6 @@
 
 </head>
 <body>
-hello
+<?php CreateNav(); ?>
 </body>
 </html>
