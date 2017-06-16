@@ -49,19 +49,40 @@ function CreateNav(){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
 </head>
 <body>
-<?php CreateNav(); ?>
+<div class="bs-example bs-navmenu-offcanvas-example">
+    <div id="myNavmenuCanvas" class="canvas-slid" style="left: 300px; right: -300px;">
+        <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas in" role="navigation">
+            <a class="navmenu-brand" href="#">Brand</a>
+            <ul class="nav navmenu-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </nav>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <button type="button" class="" data-toggle="collapse" data-target="#myNavmenu" data-canvas="#myNavmenuCanvas" data-placement="left">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.</p>
+    </div>
+</div>
+
 </body>
 </html>
+<!-- alle java scripts HIER aub dankuwel ;)-->
+<script src="offcanvas.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+    $('.sidebar-toggle').collapse();
+</script>
