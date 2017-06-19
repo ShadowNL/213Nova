@@ -17,7 +17,7 @@
     </head>
     <body>
         <div class="container-fluid">
-            <div class="col-sm-12" style="background-color: #3366FF"><p class="text-white"><h2><center> Sector Page </center></h2></p></div>
+            <div class="col-sm-12" style="background-color: #44A0FF"><p class="text-white"><h2><center> Sector Page </center></h2></p></div>
 
             <div class="row row-centered">
                 <div class="col-xs-3 col-centered" style="height: 13%"></div>

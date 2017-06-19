@@ -58,7 +58,22 @@ function generateOpdrachten(){
         if ($result && $result->num_rows > 0) {
             //output data of each row
             while ($row = $result->fetch_assoc()) {
-                echo "<div class='opdrachten-label'><b>".$row["Titel"] . "</b></div>" . $row["Omschrijving"] . "<br/>";
+                echo "<center>
+                        <div class='opdrachten-label'>
+                            <div class='opdrachten-label-header'>
+                                <b>".$row["Titel"] . "</b>
+                            </div>
+                            <div class='opdrachten-label-textbox'>"
+                            . $row["Omschrijving"] .
+                            "</div>
+                            <div class='opdrachten-label-teacher'> leraar: "
+                            . $row["Verantwoordelijke"] .
+                            "<div class='opdrachten-label-download-btn'>
+                                    <a href=".$row["Downloadlink"]." download>download</a>
+                            </div>
+                            </div>
+                        </div>
+                     </center>";
             }
         } else {
             echo "Geen opdrachten in dit vak gevonden";
@@ -83,7 +98,7 @@ function generateOpdrachten(){
 </div>
 
 <div id="main">
-    <div class="col-sm-12" style="background-color: #3366FF">
+    <div class="col-sm-12" style="background-color: #44A0FF">
     <span style="font-size:30px;cursor:pointer;color: white" onclick="toggleNav()">&#9776;</span>
     </div>
     <div class="col-sm-12 Opdrachten-view">
@@ -92,8 +107,6 @@ function generateOpdrachten(){
             generateOpdrachten();
         }
         ?>
-        <!-- Dit is een testdownload TEEHEE-->
-        <a href="test.txt" download>download</a>
     </div>
 </div>
 
