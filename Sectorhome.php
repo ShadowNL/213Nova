@@ -10,7 +10,6 @@ $sHost = 'localhost';
 $sUser = 'root';
 $sPass = '';
 $sDB = '213server';
-//zie jij dit beer? mhuahahaha
 //create connection
 $conStr = mysqli_connect($sHost, $sUser, $sPass, $sDB);
 
@@ -24,6 +23,7 @@ if (!($conStr)) {
 
 }
 $SectorID = $_GET['SectorID'];
+$VakID = $_GET['VakID'];
 
 function CreateNav(){
     global $conStr;
@@ -32,18 +32,38 @@ function CreateNav(){
 
     $result = $conStr->query($sqlNav);
 
+
+
     if ($result && $result->num_rows > 0) {
         //output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo '<tr>' . "<td>" .
-                '<div class="col-md-12">' .
-                $row["Vaknaam"] ."". "</div>" . '</td>' . '</tr>';
+            echo'<center><div onclick="redirect('.$SectorID.','.$row["VakID"]. ')" class="MenuItem">' .
+                $row["Vaknaam"] ."</div>";
         }
     } else {
         echo "Geen vakken in deze sector gevonden";
     }
 }
 
+function generateOpdrachten(){
+        global $conStr;
+        global $SectorID;
+        global $VakID;
+        $sqlNav = "SELECT * FROM opdrachten WHERE VakID =" .$VakID;
+
+        $result = $conStr->query($sqlNav);
+
+
+
+        if ($result && $result->num_rows > 0) {
+            //output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='opdrachten-label'><b>".$row["Titel"] . "</b></div>" . $row["Omschrijving"] . "<br/>";
+            }
+        } else {
+            echo "Geen opdrachten in dit vak gevonden";
+        }
+}
 ?>
 <html>
 <head>
@@ -56,33 +76,57 @@ function CreateNav(){
     <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
 </head>
 <body>
-<div class="bs-example bs-navmenu-offcanvas-example">
-    <div id="myNavmenuCanvas" class="canvas-slid" style="left: 300px; right: -300px;">
-        <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas in" role="navigation">
-            <a class="navmenu-brand" href="#">Brand</a>
-            <ul class="nav navmenu-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-            </ul>
-        </nav>
-        <div class="navbar navbar-default navbar-fixed-top">
-            <button type="button" class="" data-toggle="collapse" data-target="#myNavmenu" data-canvas="#myNavmenuCanvas" data-placement="left">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.</p>
+
+<div id="mySidenav" class="sidenav">
+    <?php CreateNav() ?>
+
+</div>
+
+<div id="main">
+    <div class="col-sm-12" style="background-color: #3366FF">
+    <span style="font-size:30px;cursor:pointer;color: white" onclick="toggleNav()">&#9776;</span>
+    </div>
+    <div class="col-sm-12 Opdrachten-view">
+        <?php
+        if (isset($_GET['VakID'])) {
+            generateOpdrachten();
+        }
+        ?>
+        <!-- Dit is een testdownload TEEHEE-->
+        <a href="test.txt" download>download</a>
     </div>
 </div>
 
 </body>
 </html>
 <!-- alle java scripts HIER aub dankuwel ;)-->
-<script src="offcanvas.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
-    $('.sidebar-toggle').collapse();
+    // 0 = dicht, 1 = open
+    var navOpen = false;
+
+    function toggleNav() {
+        if (navOpen) {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        } else {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+        navOpen = !navOpen;
+    }
+
+    function redirect(id, id2) {
+        window.location.href = "Sectorhome.php?SectorID="+id+"&VakID="+id2;
+    }
 </script>
+
+
+
+
+
+
+
+
+

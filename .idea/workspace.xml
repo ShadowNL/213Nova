@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bbef167-d06f-4b27-a23f-b1c519a09223" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/offcanvas.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/offcanvas.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/offcanvas.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sectorhome.php" afterPath="$PROJECT_DIR$/Sectorhome.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/offcanvas.css" afterPath="$PROJECT_DIR$/offcanvas.css" />
     </list>
     <ignored path="213server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,9 +31,11 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="442">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,13 +43,32 @@
       <file leaf-file-name="Sectorhome.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sectorhome.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+            <state relative-caret-position="1">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
-                <marker date="1497560306582" expanded="true" signature="939:959" placeholder="SELECT stude... studentinfo" />
-                <marker date="1497560306582" expanded="true" signature="939:976" placeholder="SELECT * FRO... vakken" />
-                <marker date="1497560306582" expanded="true" signature="939:990" placeholder="SELECT * FRO... vakken" />
-                <marker date="1497560306582" expanded="true" signature="1189:1209" placeholder="..." />
+                <element signature="n#CreateNav#0;n#!!top" expanded="false" />
+                <marker date="1497865145520" expanded="true" signature="933:970" placeholder="SELECT * FRO... vakken" />
+                <marker date="1497865145520" expanded="true" signature="1509:1539" placeholder="SELECT * FRO... opdrachten" />
+                <marker date="1497865145520" expanded="true" signature="1509:1547" placeholder="SELECT * FRO... opdrachten" />
+                <marker date="1497865145520" expanded="true" signature="1861:4131" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="1970:3206" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="1977:1996" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="1977:2659" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="2666:3198" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="2704:2737" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="2754:2925" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="2754:3189" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="2790:2815" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="2816:2914" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="2816:2925" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="2835:2877" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="2850:2877" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="2969:3182" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="3551:4121" placeholder="..." />
+                <marker date="1497865145520" expanded="true" signature="3631:3996" placeholder="{...}" />
+                <marker date="1497865145520" expanded="true" signature="3654:3801" placeholder="{...}" />
+                <marker date="1497865145520" expanded="true" signature="3807:3962" placeholder="{...}" />
+                <marker date="1497865145520" expanded="true" signature="4029:4112" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -55,18 +77,8 @@
       <file leaf-file-name="offcanvas.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/offcanvas.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-802">
-              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="offcanvas.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/offcanvas.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+            <state relative-caret-position="489">
+              <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -90,8 +102,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Landingpage.html" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/offcanvas.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/nbproject/test.php" />
         <option value="$PROJECT_DIR$/Sectorhome.php" />
         <option value="$PROJECT_DIR$/offcanvas.css" />
       </list>
@@ -218,18 +231,18 @@
       <workItem from="1497433330473" duration="905000" />
       <workItem from="1497439683444" duration="19000" />
       <workItem from="1497439758139" duration="11226000" />
-      <workItem from="1497601997676" duration="652000" />
+      <workItem from="1497601997676" duration="17165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13418000" />
+    <option name="totallyTimeSpent" value="29931000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.018154312" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1301059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -260,7 +273,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -268,7 +283,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -277,10 +294,29 @@
         <state relative-caret-position="1173">
           <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
           <folding>
-            <marker date="1497560306582" expanded="true" signature="939:959" placeholder="SELECT stude... studentinfo" />
-            <marker date="1497560306582" expanded="true" signature="939:976" placeholder="SELECT * FRO... vakken" />
-            <marker date="1497560306582" expanded="true" signature="939:990" placeholder="SELECT * FRO... vakken" />
-            <marker date="1497560306582" expanded="true" signature="1189:1209" placeholder="..." />
+            <element signature="n#CreateNav#0;n#!!top" expanded="false" />
+            <marker date="1497865145520" expanded="true" signature="933:970" placeholder="SELECT * FRO... vakken" />
+            <marker date="1497865145520" expanded="true" signature="1509:1539" placeholder="SELECT * FRO... opdrachten" />
+            <marker date="1497865145520" expanded="true" signature="1509:1547" placeholder="SELECT * FRO... opdrachten" />
+            <marker date="1497865145520" expanded="true" signature="1861:4131" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="1970:3206" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="1977:1996" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="1977:2659" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2666:3198" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2704:2737" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2754:2925" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2754:3189" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2790:2815" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2816:2914" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2816:2925" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2835:2877" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2850:2877" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2969:3182" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="3551:4121" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="3631:3996" placeholder="{...}" />
+            <marker date="1497865145520" expanded="true" signature="3654:3801" placeholder="{...}" />
+            <marker date="1497865145520" expanded="true" signature="3807:3962" placeholder="{...}" />
+            <marker date="1497865145520" expanded="true" signature="4029:4112" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -305,7 +341,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -324,39 +362,68 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Landingpage.html" />
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/offcanvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/offcanvas.js">
+    <entry file="file://$PROJECT_DIR$/nbproject/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Sectorhome.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+        <state relative-caret-position="1">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
-            <marker date="1497560306582" expanded="true" signature="939:959" placeholder="SELECT stude... studentinfo" />
-            <marker date="1497560306582" expanded="true" signature="939:976" placeholder="SELECT * FRO... vakken" />
-            <marker date="1497560306582" expanded="true" signature="939:990" placeholder="SELECT * FRO... vakken" />
-            <marker date="1497560306582" expanded="true" signature="1189:1209" placeholder="..." />
+            <element signature="n#CreateNav#0;n#!!top" expanded="false" />
+            <marker date="1497865145520" expanded="true" signature="933:970" placeholder="SELECT * FRO... vakken" />
+            <marker date="1497865145520" expanded="true" signature="1509:1539" placeholder="SELECT * FRO... opdrachten" />
+            <marker date="1497865145520" expanded="true" signature="1509:1547" placeholder="SELECT * FRO... opdrachten" />
+            <marker date="1497865145520" expanded="true" signature="1861:4131" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="1970:3206" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="1977:1996" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="1977:2659" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2666:3198" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2704:2737" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2754:2925" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2754:3189" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2790:2815" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2816:2914" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2816:2925" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2835:2877" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2850:2877" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="2969:3182" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="3551:4121" placeholder="..." />
+            <marker date="1497865145520" expanded="true" signature="3631:3996" placeholder="{...}" />
+            <marker date="1497865145520" expanded="true" signature="3654:3801" placeholder="{...}" />
+            <marker date="1497865145520" expanded="true" signature="3807:3962" placeholder="{...}" />
+            <marker date="1497865145520" expanded="true" signature="4029:4112" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/offcanvas.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-802">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state relative-caret-position="489">
+          <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
           <folding />
         </state>
       </provider>
