@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bbef167-d06f-4b27-a23f-b1c519a09223" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sectorhome.php" afterPath="$PROJECT_DIR$/Sectorhome.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/offcanvas.css" afterPath="$PROJECT_DIR$/offcanvas.css" />
-    </list>
+    <list default="true" id="7bbef167-d06f-4b27-a23f-b1c519a09223" name="Default" comment="" />
     <ignored path="213server.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -236,12 +232,12 @@
       <workItem from="1497433330473" duration="905000" />
       <workItem from="1497439683444" duration="19000" />
       <workItem from="1497439758139" duration="11226000" />
-      <workItem from="1497601997676" duration="21358000" />
+      <workItem from="1497601997676" duration="21713000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34124000" />
+    <option name="totallyTimeSpent" value="34479000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -404,6 +400,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin.Login">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-425">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
