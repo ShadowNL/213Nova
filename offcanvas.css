@@ -5,10 +5,9 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #BED4F7;
+    background-color: #333;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
 }
 
 .sidenav a {
@@ -46,13 +45,27 @@
     transition: margin-left .5s;
     padding: 0px;
 }
+.menusplit{
+    height: 20px;
+    width: 100%;
+    border-bottom-color: #434343;
+    border-style: solid;
+    border-width: 2px;
+}
 
 .MenuItem {
-    width: 100%;
-    height: 25px;
+    width: 240px;
+    height: 40px;
+    padding: 4px;
+    padding-left: 4px;
+    padding-top: 10px;
+    margin-top: 4px;
+    background-color: #434343;
+    color:white;
+
 }
 .MenuItem:hover{
-    background-color: #818181;
+    background-color: #677887;
     color: white;
 }
 .opdrachten-view{
@@ -66,9 +79,9 @@
     width: 80%;
     height: 120px;
     margin: 20px auto;
-    -webkit-box-shadow: 4px 4px 6px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px 4px 6px -1px rgba(0,0,0,0.75);
-    box-shadow: 4px 4px 6px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
 }
 .opdrachten-label-header{
     height: 30px;
@@ -85,6 +98,7 @@
     text-align: left;
     padding: 4px;
     padding-left: 4px;
+    word-wrap: break-word;
 }
 .opdrachten-label-teacher{
     width: 100%;
@@ -99,4 +113,10 @@
     padding-right: 4px;
     color: #44A0FF;
     font-weight: bold;
+}
+.logo{
+    display: block;
+    position: relative;
+    top: 10px;
+    padding: 15px;
 }

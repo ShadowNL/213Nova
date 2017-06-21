@@ -53,8 +53,6 @@ function generateOpdrachten(){
 
         $result = $conStr->query($sqlNav);
 
-
-
         if ($result && $result->num_rows > 0) {
             //output data of each row
             while ($row = $result->fetch_assoc()) {
@@ -93,6 +91,8 @@ function generateOpdrachten(){
 <body>
 
 <div id="mySidenav" class="sidenav">
+    <img class="Logo" src="images/AOLogo.png" width="100%"; height="100px";>
+    <div class="menusplit"></div>
     <?php CreateNav() ?>
 
 </div>
