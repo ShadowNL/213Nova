@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <html>
     <head>
         <title>landingpage</title>
@@ -26,25 +31,28 @@
             <div class="col-xs-6">
                 <div class="panel panel-default" style="height: 43% ; border: none !important">
                     <div class="panel-heading-custom" style="background-color: #ffae63 ; height: 15%"><h2><center>Inloggen als Docent</center></h2></div>
-                    <div class="panel-body" style="height: 65%  ; background-color: #ffedbf "> <div class="form-group">
+                    <div class="panel-body" style="height: 65%  ; background-color: #ffedbf ">
+                        <div >
 
-                            <label for="usr">Name:</label>
-                            <input type="text" class="form-control" id="usr">
+
+                            <form action ="loginfunction.php" method="post">
+                            <label for="DocentID">DocentID</label>
+                            <input type="text" class="form-control" name="DocentID">
                         </div>
 
                         <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd">
-                        </div> </div>
+                            <label for="Password">Password:</label>
+                            <input type="password" class="form-control" name="Password">
+                        </div></div>
 
 
                     <div class="panel-footer" style="background-color: #ffae63">
                         <div class="pull-left" id="SectorPage">
-                            <h4>Terug naar Sectoren</h4>
+                            <button class="btn" >Terug naar Sectoren</button>
                         </div>
-                        
+
                         <div class="pull-right" id="Login">
-                            <h4 class="text-right">Inloggen</h4>
+                            <button class="btn"  type="submit">Login</button>
                         </div>
                         <div class="clearfix"></div>
                     </div>
