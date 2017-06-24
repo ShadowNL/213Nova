@@ -5,23 +5,8 @@ if (!isset($_GET['SectorID']) || !in_array($_GET['SectorID'], [1, 2, 3])){
     echo "<script>window.location.href='/';</script>";
     die();
 }
+include 'DatabaseConnection.php';
 
-$sHost = 'localhost';
-$sUser = 'root';
-$sPass = '';
-$sDB = '213server';
-//create connection
-$conStr = mysqli_connect($sHost, $sUser, $sPass, $sDB);
-
-// check connection
-if (!($conStr)) {
-    die('Failed to connect to MySQL Database Server - #' . mysqli_connect_errno() . ': ' . mysqli_Connect_error());
-    if (!mysqli_select_db('slb')) {
-        die('Connected to Server, but Failed to Connect to Database - #' . mysqli_connect_errno() . ': ' . mysqli_connect_errno());
-    }
-} else {
-
-}
 $SectorID = $_GET['SectorID'];
 $VakID = $_GET['VakID'];
 
@@ -98,7 +83,7 @@ function generateOpdrachten(){
 </div>
 
 <div id="main">
-    <div class="col-sm-12" style="background-color: #44A0FF">
+    <div class="col-sm-12" style="background-color: #44A0FF;">
     <span style="font-size:30px;cursor:pointer;color: white" onclick="toggleNav()">&#9776;</span>
     </div>
     <div class="col-sm-12 Opdrachten-view">
@@ -131,7 +116,7 @@ function generateOpdrachten(){
     }
 
     function redirect(id, id2) {
-        window.location.href = "Sectorhome.php?SectorID="+id+"&VakID="+id2;
+        window.location.href = "2_Sectorhome.php?SectorID="+id+"&VakID="+id2;
     }
 </script>
 
