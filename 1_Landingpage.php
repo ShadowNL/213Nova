@@ -17,8 +17,14 @@
     </head>
     <body>
         <div class="container-fluid">
-            <div class="col-sm-12" style="background-color: #44A0FF">
+            <div class="col-sm-4" style="background-color: #44A0FF; height: 13%">
+                <p class="text-white"><h2><center>  </center></h2></p>
+            </div>
+             <div class="col-sm-4" style="background-color: #44A0FF; height: 13%">
                 <p class="text-white"><h2><center> Sector Page </center></h2></p>
+            </div>
+             <div class="col-sm-4" style="background-color: #44A0FF; height: 13%">
+                 <p class="text-white"><h2><center> <a href="3_adminlogin.php" class="button">Admin</a> </center></h2></p>
             </div>
 
             <div class="row row-centered">
