@@ -1,8 +1,22 @@
 <?php
 session_start();
+
+    if(isset($_POST['hidden'])){
+        include('DatabaseConnection.php');
+
+        $username = $_POST['Username'];
+        $password = $_POST['Password'];
+    }
+
+
+function Geterror()
+{
+    $error_id = isset($_GET['err']);
+    if ($error_id == 1){
+        echo"Wrong username or password";
+    }
+}
 ?>
-
-
 <html>
     <head>
         <title>landingpage</title>
@@ -33,31 +47,30 @@ session_start();
                     <div class="panel-heading-custom" style="background-color: #ffae63 ; height: 15%"><h2><center>Inloggen als Docent</center></h2></div>
                     <div class="panel-body" style="height: 65%  ; background-color: #ffedbf ">
                         <div >
+                            <form action="4_adminoverview.php" method="post">
 
+                                <center>Username:<input type="text" name="user" ></center>
 
-                            <form action ="4_adminoverview.php" method="post">
-                            <label for="Username">DocentID</label>
-                            <input type="text" class="form-control" name="Username">
+                                <p> &nbsp;</p>
+                                <center>Password:<input type="password" name="pass"  ></center>
+                                <p>&nbsp;</p>
+                                &nbsp;
+                                <center><label style="color: red"><?php Geterror(); ?></label></center>
                         </div>
-
-                        <div class="form-group">
-                            <label for="Password">Password:</label>
-                            <input type="password" class="form-control" name="Password">
-                        </div></div>
-
-
-                    <div class="panel-footer" style="background-color: #ffae63">
-                        <div class="pull-left" id="SectorPage">
-                            <button class="btn" >Terug naar Sectoren</button>
-                        </div>
-
-                        <div class="pull-right" id="Login">
-                            <button class="btn"  type="submit">Login</button>
-                        </div>
-                        <div class="clearfix"></div>
                     </div>
+                                <div class="panel-footer" style="background-color: #ffae63">
+                                    <div class="pull-left" id="SectorPage">
+                                        <button class="btn" >Terug naar Sectoren</button>
+                                    </div>
 
-                </div>
+                                    <div class="pull-right" id="Login">
+                                        <button class="btn"  type="submit">Login</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+
+
             </div>
             <div class="col-xs-3">
 

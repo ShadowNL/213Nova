@@ -2,22 +2,25 @@
 session_start();
 include 'DatabaseConnection.php';
 
-$DocentID = $_POST['Username'];
-$Password = $_POST['Password'];
-echo $DocentID;
-echo $Password;
+$username = $_POST['user'];
+$password = $_POST['pass'];
+//retrieve username and pass
+$sqlcheck = "SELECT Username, Password FROM docenten WHERE (Username = '" . $username . "') and (Password = '" . $password . "')";
 
-$sql = "SELECT * FROM docenten WHERE DocentID='$DocentID' AND Password='$Password'";
-$result = mysqli_query($conStr, $sql);
+$result = $conStr->query($sqlcheck);
 
-if(!$row = mysqli_fetch_assoc($result)){
-    echo "Your DocentID or Password is incorrect!";
-} else {
-    $_SESSION['Username'] = $row['Username'];
+if ($result && $result->num_rows > 0) {
+    //output data of each row
+    while ($row = $result->fetch_assoc()){
+        $_SESSION['username'] = $row['Username'];
+        //header("Location: 4_adminoverview.php");
+    }
+}else{
+    header ("Location: 3_adminlogin.php?err=1");
 }
 
 function GetUsername(){
-    echo $_SESSION['Username'];
+    echo $_SESSION['username'];
 }
 
 function GetVakken(){
@@ -41,6 +44,7 @@ function GetVakken(){
     }
 }
 ?>
+
 <html>
     <head>
         <title>landingpage</title>
@@ -83,6 +87,7 @@ function GetVakken(){
 
     </body>
 </html>
+
 <script>
     // 0 = dicht, 1 = open
     var navOpen = false;
