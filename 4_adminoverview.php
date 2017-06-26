@@ -74,7 +74,9 @@ function GetVakken(){
         <div id="main">
             <div class="col-sm-12" style="background-color: #ffae63">
                 <span style="font-size:30px;cursor:pointer;color: white"  onclick="toggleNav()">&#9776;</span>
-                <span class="pull-right Loggedinas"> Welcome <?php GetUsername(); ?> &nbsp;&nbsp;&nbsp;</span>
+                <span class="pull-right Loggedinas"> Welcome <?php GetUsername(); ?>
+                    </button>
+                </span>
 
             </div>
             <div class="col-sm-12 Opdrachten-view" style="height: 35%"></div>
