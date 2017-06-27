@@ -47,7 +47,7 @@ function Geterror()
                     <div class="panel-heading-custom" style="background-color: #ffae63 ; height: 15%"><h2><center>Inloggen als Docent</center></h2></div>
                     <div class="panel-body" style="height: 65%  ; background-color: #ffedbf ">
                         <div >
-                            <form action="4_adminoverview.php" method="post">
+                            <form action="redirect.php" method="post">
 
                                 <center>Username:<input type="text" name="user" ></center>
 
