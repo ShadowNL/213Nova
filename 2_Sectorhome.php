@@ -118,6 +118,8 @@ function generateOpdrachten(){
     function redirect(id, id2) {
         window.location.href = "2_Sectorhome.php?SectorID="+id+"&VakID="+id2;
     }
+    </script>
+
 </script>
 
 

@@ -14,6 +14,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+        
     </head>
     <body>
         <div class="container-fluid">
@@ -34,8 +35,8 @@
             <div class="row row-centered">
 
                 <div class="col-xs-4 col-centered" >
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div onclick="redirect(1)" class="panel-body" style="height: 20%; padding: 8% 0;  "><center><h2>Applicatie Ontwikkelaar</h2></center></div>
+                    <div class="panel panel-default" id="1" style="background-color: #8da9fc">
+                        <div id="res" onclick="redirect(1)" class="panel-body" style="height: 20%; font-size: 2em;  "><center><h2>Applicatie Ontwikkelaar</h2></center></div>
 
                     </div>
                 </div>
@@ -56,20 +57,20 @@
             <div class="row row-centered">
 
                 <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default" style="background-color: #8da9fc">
+                    <div class="panel panel-default clearfix" style="background-color: #8da9fc">
                         <div class="panel-body" style="height: 20%;  padding: 7% 0;  "><center><h2>Docent Overzicht</h2></center></div>
 
                     </div>
                 </div>
                 <div class="col-xs-4 col-centered">
                     <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div class="panel-body" style="height: 20%; padding: 7% 0;  "><center><h2>Loopbaan Begeleiding</h2></center></div>
+                        <div class="panel-body clearfix" style="height: 20%; padding: 7% 0;  "><center><h2>Loopbaan Begeleiding</h2></center></div>
 
                     </div>
                 </div>
                 <div class="col-xs-4 col-centered">
                     <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div class="panel-body" style="height: 20%; padding: 7% 0;  "><center><h2>Rooster</h2></center></div>
+                        <div class="panel-body clearfix" style="height: 20%; padding: 7% 0;  "><center><h2>Rooster</h2></center></div>
 
                     </div>
                 </div>
@@ -82,3 +83,9 @@ function redirect(id) {
     window.location.href = "2_Sectorhome.php?SectorID="+id;
 }
 </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="jquery.fittext.js"></script>
+<script>
+  jQuery("#res").fitText();
+</script>
+

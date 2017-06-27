@@ -41,7 +41,7 @@ function GetVakken(){
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+ <link rel="stylesheet" href="font-awesome/font-awesome-4.7.0/css/font-awesome.min.css">
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
@@ -62,7 +62,8 @@ function GetVakken(){
             <div class="col-sm-12" style="background-color: #ffae63">
                 <span style="font-size:30px;cursor:pointer;color: white"  onclick="toggleNav()">&#9776;</span>
                 <span class="pull-right Loggedinas"> Welcome <?php GetUsername(); ?>
-                    </button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                       <button style="margin: 0em; background-color:transparent !important "type="button" class="btn btn-primary-outline"><i class="fa fa-power-off fa-2x" aria-hidden="true"></i></button>
                 </span>
 
             </div>
