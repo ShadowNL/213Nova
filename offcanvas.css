@@ -114,6 +114,36 @@
     color: #44A0FF;
     font-weight: bold;
 }
+.docent-label{
+    display: block;
+    width: 80%;
+    height: 100px;
+    margin: 20px auto;
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
+}
+.docent-label-header{
+    height: 10px;
+    padding: 4px;
+    padding-left: 4px;
+    width: 100%;
+    top:0;
+    background-color: #C6E2FF;
+    text-align: left;
+}
+.docent-label-foto{
+    height: 90px;
+    text-align: left;
+}
+.docent-label-naam{
+    height: 90px;
+    text-align: left;
+}
+.docent-label-vakken{
+    height: 90px;
+    text-align: left;
+}
 .logo{
     display: block;
     position: relative;

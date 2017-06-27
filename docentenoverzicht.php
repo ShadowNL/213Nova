@@ -70,20 +70,12 @@ function generateDocenten(){
             $name = getName($id);
             $vakken = getVakken($id);
             //generate html
-            //docent-label
-            //docent-label-header
-            //docent-label-naam
-            //docent-label-vakken
             echo "<center>
-                    <div class='opdrachten-label'> 
-                        <div class='opdrachten-label-header'>
-                        </div>
-                        <div class='opdrachten-label-textbox'>"
-                        . $vakken .
-                        "</div>
-                        <div class='opdrachten-label-teacher'> leraar: "
-                        . $name .
-                        "</div>
+                    <div class='docent-label'> 
+                        <div class='docent-label-header'></div>
+                        <div class='col-sm-2 docent-label-foto'></div>
+                        <div class='col-sm-4 docent-label-naam'>leraar: " . $name . "</div>
+                        <div class='col-sm-2 docent-label-vakken'>vakken: " . $vakken . "</div>
                     </div>
                  </center>";
         }
@@ -105,8 +97,10 @@ function generateDocenten(){
 </head>
 <body>
     <div id="main">
-        <div class="col-sm-12" style="background-color: #44A0FF">
-        <span style="font-size:30px;cursor:pointer;color: white" onclick="toggleNav()">&#9776;</span>
+        <div class="col-sm-12" style="height:50px; background-color: #44A0FF">
+            <span style="font-size:30px;cursor:pointer;color: white" onclick="toggleNav()">
+                
+            </span>
         </div>
         <div class="col-sm-12 Opdrachten-view">
             <?php
