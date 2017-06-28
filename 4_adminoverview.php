@@ -30,6 +30,46 @@ function GetVakken(){
         echo "Geen vakken in deze sector gevonden";
     }
 }
+
+function OpenAddSubject(){
+    if($_GET['SectorID'] == -1||$_GET['VakID'] == -1) {
+        echo "<div class=\"\" style=\"margin: 20px; width: auto; height: auto\">
+                    <h2>Vak Toevoegen</h2>
+                    </br>
+                    <table style=\"border-color: transparent\">
+                        <tr>
+                            <td>Select sector:</td>
+                            <td><input type=\"text\" name=\"user\"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Vak naam:</td>
+                            <td><input type=\"text\" name=\"user\" ></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><button type=\"submit\" style=\"float: left;\">Add</button></td>
+                        </tr>
+                    </table>
+                </div>";
+    }
+}
+
+function AddSubject(){
+    global $conStr;
+    $SectorID = 0;// 0 = gonna be get posts
+    $VakID = 0;
+    $Vaknaam = 0;
+
+    $sqlAddSubject = "INSERT INTO `vakken`(`SectorID`, `VakID`, `Vaknaam`) VALUES ($SectorID,$VakID,$Vaknaam)";
+
+    $result = $conStr->query($sqlAddSubject);
+}
 ?>
 
 <html>
@@ -55,7 +95,7 @@ function GetVakken(){
                 <img class="Logo" src="images/Adminlogo.png" width="100%"; height="100px";>
                 <div class="menusplit"></div>
             <?php GetVakken(); ?>
-            <div class="MenuItem"><span class="glyphicon glyphicon-plus-sign"></span></div>
+            <div onclick="redirect(-1,-1)" class="MenuItem"><span class="glyphicon glyphicon-plus-sign"></span></div>
         </div>
 
         <div id="main">
@@ -66,11 +106,12 @@ function GetVakken(){
                 </span>
 
             </div>
-            <div class="col-sm-12 Opdrachten-view" style="height: 35%"></div>
             <div class="col-sm-12 Opdrachten-view">
-                <div class="h1-custom">
-                    <center><h1 style="color: #b0b7b6 ">Kies een vak</h1></center>
-                </div>
+
+
+                <?php
+                OpenAddSubject();
+                ?>
             </div>
         </div>
 
