@@ -32,45 +32,20 @@
                     <div class="modal-content">
                         <div class="modal-header" style="height: 8% ;padding: 12 12 ;background-color: #ffae63;">
                             <h3 class="modal-title">   
-                                <center> <p style="color: white">File Editor</p></center>
+                                <center> <p style="color: white">Bestand aanpasen</p></center>
                             </h3>
                         </div>
                         <div class="modal-body">
-                            <div class="modal-body">
+                            <div class="modal-body" style="height: 25%">
 
-                                <form role="form">
-                                    <div class="form-group">
-
-                                        <input type="email" class="form-control"
-                                               id="exampleInputEmail1" placeholder="Title"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control" style="min-width: 100%; min-height: 20%" placeholder="Description"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <label class="input-group-btn">
-                                                <span class="btn btn-primary">
-                                                    Browse&hellip; <input type="file" style="display: none;" multiple>
-                                                </span>
-                                            </label>
-                                            <input type="text" class="form-control" readonly>
-                                        </div>
-                                        <span class="help-block">
-                                            Try selecting one or more files and watch the feedback
-                                        </span>
-                                    </div>
+                                <h2><p style="color: red"> Weet u zeker dat u (bestandsnaam)uit (vaknaam) wilt verwijdere? </p></h2>
                             </div>
 
-
-
-
-
-                            </div><div class="modal-footer" style="height: 7% ;padding: 3 3 ;background-color: #ffae63;">
-                                <div class="col-sm-4">  <center><button style="background-color:transparent !important;"type="button" class="btn btn-primary-outline" onclick="modal-close"><h4><p style="color: white">Verwerp</p></h4></button> </center></div>
+                        </div><div class="modal-footer" style="height: 7% ;padding: 1 1 ;background-color: #ffae63">
+                            <div class="col-sm-4">  <center><button style="background-color:transparent !important"type="button" class="btn btn-primary-outline" ><h4><p style="color: white">Nee, ga terug</p></h4></button> </center></div>
                             <div class="col-sm-4">  </div>
-                            <div class="col-sm-4"> <center><button style="width:100% ;background-color:transparent !important;"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Toevoegen</p></h4</button></center> </div>
-                           
+                            <div class="col-sm-4"> <center><button style="width:100% ;background-color:transparent !important"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Ja, verwijder</p></h4</button></center> </div>
+
                         </div>
                     </div>
 

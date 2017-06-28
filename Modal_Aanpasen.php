@@ -32,45 +32,33 @@
                     <div class="modal-content">
                         <div class="modal-header" style="height: 8% ;padding: 12 12 ;background-color: #ffae63;">
                             <h3 class="modal-title">   
-                                <center> <p style="color: white">File Editor</p></center>
+                                <center> <p style="color: white">Bestand aanpasen</p></center>
                             </h3>
                         </div>
                         <div class="modal-body">
                             <div class="modal-body">
 
                                 <form role="form">
-                                    <div class="form-group">
+                                    <div class="form-group" style="resize: none">
 
                                         <input type="email" class="form-control"
                                                id="exampleInputEmail1" placeholder="Title"/>
                                     </div>
+
                                     <div class="form-group">
-                                        <textarea class="form-control" style="min-width: 100%; min-height: 20%" placeholder="Description"></textarea>
+                                        <textarea class="form-control" style="min-width: 100%;overflow-y: scroll ;min-height: 20%; resize: none" placeholder="Description"></textarea>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <label class="input-group-btn">
-                                                <span class="btn btn-primary">
-                                                    Browse&hellip; <input type="file" style="display: none;" multiple>
-                                                </span>
-                                            </label>
-                                            <input type="text" class="form-control" readonly>
-                                        </div>
-                                        <span class="help-block">
-                                            Try selecting one or more files and watch the feedback
-                                        </span>
+
+                                    <div class="form-group" style="max-height: 3%">
+                                        <textarea class="form-control" style="max-height: 4.7%; resize: none" readonly="" placeholder="Gekozen bestand">   </textarea>
                                     </div>
                             </div>
 
-
-
-
-
-                            </div><div class="modal-footer" style="height: 7% ;padding: 3 3 ;background-color: #ffae63;">
-                                <div class="col-sm-4">  <center><button style="background-color:transparent !important;"type="button" class="btn btn-primary-outline" onclick="modal-close"><h4><p style="color: white">Verwerp</p></h4></button> </center></div>
+                        </div><div class="modal-footer" style="height: 7% ;padding: 2 2 ;background-color: #ffae63">
+                            <div class="col-sm-4">  <center><button style="background-color:transparent !important"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Verwerp</p></h4></button> </center></div>
                             <div class="col-sm-4">  </div>
-                            <div class="col-sm-4"> <center><button style="width:100% ;background-color:transparent !important;"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Toevoegen</p></h4</button></center> </div>
-                           
+                            <div class="col-sm-4"> <center><button style="width:100% ;background-color:transparent !important"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Toevoegen</p></h4</button></center> </div>
+
                         </div>
                     </div>
 
