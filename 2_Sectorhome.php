@@ -7,8 +7,12 @@ if (!isset($_GET['SectorID']) || !in_array($_GET['SectorID'], [1, 2, 3])){
 }
 include 'DatabaseConnection.php';
 
-$SectorID = $_GET['SectorID'];
-$VakID = $_GET['VakID'];
+if(isset($_GET['SectorID'])) {
+    $SectorID = $_GET['SectorID'];
+}
+if(isset($_GET['VakID'])){
+    $VakID = $_GET['VakID'];
+}
 
 function CreateNav(){
     global $conStr;

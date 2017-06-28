@@ -1,6 +1,13 @@
 <?php
 session_start();
 include 'DatabaseConnection.php';
+if(isset($_GET['SectorID'])) {
+    $SectorID = $_GET['SectorID'];
+}
+if(isset($_GET['VakID'])){
+    $VakID = $_GET['VakID'];
+}
+
 
 function GetUsername(){
     if ($_SESSION['username']==null){
@@ -32,6 +39,9 @@ function GetVakken(){
 }
 
 function OpenAddSubject(){
+    if(isset($_GET['VakID'])){
+        $VakID = $_GET['VakID'];
+
     if($_GET['SectorID'] == -1||$_GET['VakID'] == -1) {
         echo "<div class=\"\" style=\"margin: 20px; width: auto; height: auto\">
                     <h2>Vak Toevoegen</h2>
@@ -66,6 +76,8 @@ function OpenAddSubject(){
                 </div>";
     }
 }
+}
+
 ?>
 
 <html>
