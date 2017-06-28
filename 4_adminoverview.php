@@ -111,7 +111,9 @@ function OpenAddSubject(){
                 <span style="font-size:30px;cursor:pointer;color: white"  onclick="toggleNav()">&#9776;</span>
                 <span class="pull-right Loggedinas" style="padding: 0 0"> Welcome <?php GetUsername(); ?>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                       <button style="margin: 0em; background-color:transparent !important "type="button" class="btn btn-primary-outline"><i class="fa fa-power-off fa-2x" aria-hidden="true"></i></button>
+                       <button onclick="logout()" style="margin: 0em; background-color:transparent !important "type="submit" class="btn btn-primary-outline">
+                           <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
+                       </button>
                 </span>
 
             </div>
@@ -144,5 +146,9 @@ function OpenAddSubject(){
 
     function redirect(id, id2) {
         window.location.href = "4_adminoverview.php?SectorID="+id+"&VakID="+id2;
+    }
+    
+    function logout(){
+        window.location.href = "Logout.php"
     }
 </script>
