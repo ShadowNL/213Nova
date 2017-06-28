@@ -109,7 +109,7 @@ function OpenAddSubject(){
         <div id="main">
             <div class="col-sm-12" style="background-color: #ffae63">
                 <span style="font-size:30px;cursor:pointer;color: white"  onclick="toggleNav()">&#9776;</span>
-                <span class="pull-right Loggedinas"> Welcome <?php GetUsername(); ?>
+                <span class="pull-right Loggedinas" style="padding: 0 0"> Welcome <?php GetUsername(); ?>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                        <button style="margin: 0em; background-color:transparent !important "type="button" class="btn btn-primary-outline"><i class="fa fa-power-off fa-2x" aria-hidden="true"></i></button>
                 </span>
