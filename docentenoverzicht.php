@@ -68,16 +68,18 @@ function generateDocenten(){
             //fetch values
             $id = $row["DocentID"];
             $name = getName($id);
-            $vakken = getVakken($id);
+            $vakken = getVakken($id);//margin:0;
             //generate html
-            echo "<center>
-                    <div class='docent-label'> 
+            echo "<div class='row' style='padding-top:25px;'>
+                    <div class='col-sm-2'style='padding:0;margin:0;'></div>
+                    <div class='col-sm-8 docent-label'style='padding:0;margin:0;'>
                         <div class='docent-label-header'></div>
                         <div class='col-sm-2 docent-label-foto'></div>
-                        <div class='col-sm-4 docent-label-naam'>leraar: " . $name . "</div>
-                        <div class='col-sm-2 docent-label-vakken'>vakken: " . $vakken . "</div>
+                        <div class='col-sm-3 docent-label-naam'>leraar: " . $name . "</div>
+                        <div class='col-sm-7 docent-label-vakken'>vakken: " . $vakken . "</div>
                     </div>
-                 </center>";
+                    <div class='col-sm-2'style='padding:0;margin:0;'></div>
+                  </div>";
         }
     }
 }
@@ -96,18 +98,22 @@ function generateDocenten(){
 
 </head>
 <body>
-    <div id="main">
-        <div class="col-sm-12" style="height:50px; background-color: #44A0FF">
-            <span style="font-size:30px;cursor:pointer;color: white" onclick="toggleNav()">
-                
-            </span>
+    <!--<div id="main">-->
+    <div class="container" style="width:100%;padding:0;">
+        <div class="row" style="margin:0;width:100%;height:50px;background-color:#44A0FF;">
+            <div class="col-sm-2 docent-nav-back" style="padding:0;">
+                <p style="margin:15px 0 0 0;text-align:center;font-size:16px;color:white">Naar Sectoroverzicht</p>
+            </div>
+            <div class="col-sm-8"style="padding:0 10px;">
+                <p style="margin:4px 0 0 0;padding:0;font-size:30px;color:white">Docenten Overzicht</p>
+            </div>
+            <div class="col-sm-2"style="padding:0;"></div>
         </div>
-        <div class="col-sm-12 Opdrachten-view">
-            <?php
-            generateDocenten();
-            ?>
-        </div>
+        <?php
+        generateDocenten();
+        ?>
     </div>
+    <!--</div>-->
 </body>
 </html>
 <!-- Latest compiled and minified JavaScript -->

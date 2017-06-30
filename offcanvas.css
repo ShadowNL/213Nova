@@ -116,7 +116,6 @@
 }
 .docent-label{
     display: block;
-    width: 80%;
     height: 100px;
     margin: 20px auto;
     -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
@@ -143,6 +142,16 @@
 .docent-label-vakken{
     height: 90px;
     text-align: left;
+}
+.docent-nav-back{
+    background-color:#44A0FF;
+    opacity: 1;
+    cursor:pointer;
+    height: 100%;
+}
+.docent-nav-back:hover{
+    background-color:#44A0FF;
+    opacity: 0.5;
 }
 .logo{
     display: block;
