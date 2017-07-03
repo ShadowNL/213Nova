@@ -74,6 +74,7 @@
     width: 100%;
 }
 
+/*Opdrachten label css*/
 .opdrachten-label{
     display: block;
     width: 80%;
@@ -114,6 +115,8 @@
     color: #44A0FF;
     font-weight: bold;
 }
+
+/*Docentoverzicht label css*/
 .docent-label{
     display: block;
     height: 100px;
@@ -136,10 +139,14 @@
     text-align: left;
 }
 .docent-label-naam{
+    font: bold 18px Arial;
+    color: #333333;
     height: 90px;
     text-align: left;
 }
 .docent-label-vakken{
+    font: bold 18px Arial;
+    color: #333333;
     height: 90px;
     text-align: left;
 }
@@ -153,6 +160,8 @@
     background-color:#44A0FF;
     opacity: 0.5;
 }
+
+/**/
 .logo{
     display: block;
     position: relative;
@@ -165,5 +174,45 @@
     font-weight: bold;
     float: right;
     padding: 10px;
+}
 
+/*blue custom navbar*/
+.navbar-custom-blue {
+    background-color:#44A0FF;
+    color:#ffffff;
+    border-radius:0;
+}
+.navbar-custom-blue .navbar-nav > li > a {
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+}
+.navbar-custom-blue .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color:transparent;
+}
+.navbar-custom-blue .navbar-nav > li > a:hover,
+.navbar-custom-blue .navbar-nav > li > a:focus,
+.navbar-custom-blue .navbar-nav > .active > a:hover,
+.navbar-custom-blue .navbar-nav > .active > a:focus,
+.navbar-custom-blue .navbar-nav > .open >a {
+    text-decoration: none;
+    background-color: #A1CFFF;
+}
+.navbar-custom-blue-brand{
+    position:absolute;
+    width:100%;
+    margin-top:7px;
+    text-align:center;
+    font:bold 30px Arial;
+}
+.navbar-custom-blue .navbar-brand {
+    font-size:30px;
+    color:#eeeeee;
+}
+.navbar-custom-blue .navbar-toggle {
+    background-color:#eeeeee;
+}
+.navbar-custom-blue .icon-bar {
+    background-color:#33aa33;
 }
