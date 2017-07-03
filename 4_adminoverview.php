@@ -43,7 +43,7 @@ function OpenAddSubject(){
         $VakID = $_GET['VakID'];
 
     if($_GET['SectorID'] == -1||$_GET['VakID'] == -1) {
-        echo "<div class=\"\" style=\"margin: 20px; width: auto; height: auto\">
+        echo "<center><div class=\"\" style=\"margin: 20px; width: auto; height: auto\">
                     <h2>Vak Toevoegen</h2>
                     </br>
                     <form method='post' action='AddSubject.php'>
@@ -117,7 +117,8 @@ function OpenAddSubject(){
                 </span>
 
             </div>
-            <div class="col-sm-12 Opdrachten-view">
+            <div class="col-sm-12" style="height: 28%"></div>
+            <div class="col-sm-12 Opdrachten-view" style="max-height: 65%">
 
 
                 <?php
