@@ -240,7 +240,9 @@
     border: none;
 }
 
-.button-admin:hover {background-color: #3e8e41}
+.button-admin:hover {
+    background-color: #3e8e41
+}
 
 .button-admin:active {
     background-color: #3e8e41;
@@ -261,7 +263,9 @@
     border: none;
 }
 
-.button-delete-admin:hover {background-color: #bf3131}
+.button-delete-admin:hover {
+    background-color: #bf3131
+}
 
 .button-delete-admin:active {
     background-color: #bf3131;
