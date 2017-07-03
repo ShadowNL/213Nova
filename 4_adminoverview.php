@@ -78,6 +78,44 @@ function OpenAddSubject(){
 }
 }
 
+function GetSelectedSubject(){
+    global $conStr;
+    global $SectorID;
+    global $VakID;
+    $sqlNav = "SELECT * FROM opdrachten WHERE VakID =" .$VakID;
+
+    $result = $conStr->query($sqlNav);
+
+    if ($result && $result->num_rows > 0) {
+        //output data of each row
+        while ($row = $result->fetch_assoc()) {
+            echo "<center>
+<table>
+    <tr>
+        <td>
+            <div class='opdrachten-label-admin'>
+                <b>".$row["Titel"] . "</b>
+            </div>  
+        </td>
+        <td>
+            <button type=\"button\" class=\"btn btn-info btn-lg\" id=\"myBtn\" style=\"background-color: transparent!important\">Open Modal</button>
+        </td>
+        <td>
+            <div class='button-delete-admin'>
+                delete
+            </div>
+        </td>
+    </tr>
+</table>
+                            
+                 </center>";
+        }
+    } else {
+        if($VakID != -1)
+        echo "Geen opdrachten in dit vak gevonden";
+    }
+}
+
 ?>
 
 <html>
@@ -119,12 +157,67 @@ function OpenAddSubject(){
             </div>
             <div class="col-sm-12" style="height: 28%"></div>
             <div class="col-sm-12 Opdrachten-view" style="max-height: 65%">
-
-
                 <?php
                 OpenAddSubject();
+
+                if (isset($_GET['VakID'])) {
+                    GetSelectedSubject();
+                }
                 ?>
             </div>
+        </div>
+
+        <div  style="height: 100%"class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="height: 8% ;padding: 12 12 ;background-color: #ffae63;">
+                        <h3 class="modal-title">
+                            <center> <p style="color: white">File Editor</p></center>
+                        </h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-body">
+
+                            <form role="form">
+                                <div class="form-group">
+
+                                    <input type="email" class="form-control"
+                                           id="exampleInputEmail1" placeholder="Title"/>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" style="min-width: 100%; min-height: 20%" placeholder="Description"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="input-group-btn">
+                                                <span class="btn btn-primary">
+                                                    Browse&hellip; <input type="file" style="display: none;" multiple>
+                                                </span>
+                                        </label>
+                                        <input type="text" class="form-control" readonly>
+                                    </div>
+                                        <span class="help-block">
+                                            Try selecting one or more files and watch the feedback
+                                        </span>
+                                </div>
+                        </div>
+
+
+
+
+
+                    </div><div class="modal-footer" style="height: 7% ;padding: 3 3 ;background-color: #ffae63;">
+                        <div class="col-sm-4">  <center><button style="background-color:transparent !important;"type="button" class="btn btn-primary-outline" onclick="modal-close"><h4><p style="color: white">Verwerp</p></h4></button> </center></div>
+                        <div class="col-sm-4">  </div>
+                        <div class="col-sm-4"> <center><button style="width:100% ;background-color:transparent !important;"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Toevoegen</p></h4</button></center> </div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </body>
@@ -152,4 +245,42 @@ function OpenAddSubject(){
     function logout(){
         window.location.href = "Logout.php"
     }
+</script>
+<script>
+    $(document).ready(function () {
+        $("#myBtn").click(function () {
+            $("#myModal").modal();
+        });
+    });
+
+</script>
+<script>
+    $(function () {
+
+        // We can attach the `fileselect` event to all file inputs on the page
+        $(document).on('change', ':file', function () {
+            var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+
+        // We can watch for our custom `fileselect` event like this
+        $(document).ready(function () {
+            $(':file').on('fileselect', function (event, numFiles, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log)
+                        alert(log);
+                }
+
+            });
+        });
+
+    });
 </script>
