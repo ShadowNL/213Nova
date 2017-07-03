@@ -118,6 +118,7 @@
                     });
                 });
 
-            });</script>
+            });
+        </script>
     </body>
 </html>

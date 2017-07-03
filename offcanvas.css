@@ -216,3 +216,54 @@
 .navbar-custom-blue .icon-bar {
     background-color:#33aa33;
 }
+
+.opdrachten-label-admin{
+    width: 250px;
+    height: 30px;
+    padding: 5px;
+    margin: 10px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #434343;
+}
+.button-admin {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+    height: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+}
+
+.button-admin:hover {background-color: #3e8e41}
+
+.button-admin:active {
+    background-color: #3e8e41;
+    transform: translateY(4px);
+}
+.button-delete-admin {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+    height: 30px;
+    width: 60px;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #f44242;
+    border: none;
+}
+
+.button-delete-admin:hover {background-color: #bf3131}
+
+.button-delete-admin:active {
+    background-color: #bf3131;
+    transform: translateY(4px);
+}
