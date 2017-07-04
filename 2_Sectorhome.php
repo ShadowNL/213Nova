@@ -18,16 +18,12 @@ function CreateNav(){
     global $conStr;
     global $SectorID;
     $sqlNav = "SELECT * FROM vakken WHERE SectorID =" . $SectorID ;
-
     $result = $conStr->query($sqlNav);
-
-
-
     if ($result && $result->num_rows > 0) {
         //output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo'<center><div onclick="redirect('.$SectorID.','.$row["VakID"]. ')" class="MenuItem">' .
-                $row["Vaknaam"] ."</div>";
+            echo'<center><div onclick="redirect(' . $SectorID.',' . $row["VakID"] . ')" class="MenuItem">'
+             . $row["Vaknaam"] . "</div>";
         }
     } else {
         echo "Geen vakken in deze sector gevonden";
@@ -39,30 +35,23 @@ function generateOpdrachten(){
         global $SectorID;
         global $VakID;
         $sqlNav = "SELECT * FROM opdrachten WHERE VakID =" .$VakID;
-
         $result = $conStr->query($sqlNav);
-
         if ($result && $result->num_rows > 0) {
             //output data of each row
             while ($row = $result->fetch_assoc()) {
                 echo "<center>
                         <div class='opdrachten-label'>
-                            <div class='opdrachten-label-header'>
-                                <b>".$row["Titel"] . "</b>
-                            </div>
-                            <div class='opdrachten-label-textbox'>"
-                            . $row["Omschrijving"] .
-                            "</div>
-                            <div class='opdrachten-label-teacher'> leraar: "
-                            . $row["Verantwoordelijke"] .
-                            "<div class='opdrachten-label-download-btn'>
+                            <div class='opdrachten-label-header'><b>".$row["Titel"] . "</b></div>
+                            <div class='opdrachten-label-textbox'>". $row["Omschrijving"] ."</div>
+                            <div class='opdrachten-label-teacher'> leraar: ". $row["Verantwoordelijke"] .
+                                "<div class='opdrachten-label-download-btn'>
                                     <a href=".$row["Downloadlink"]." download>download</a>
-                            </div>
+                                </div>
                             </div>
                         </div>
                      </center>";
             }
-        } else {
+        } else { 
             echo "Geen opdrachten in dit vak gevonden";
         }
 }
@@ -79,17 +68,27 @@ function generateOpdrachten(){
 </head>
 <body>
 
+<nav id='navbarblue' class="navbar navbar-custom-blue student-nav-side-fix">
+    <div  class='nav navbar-nav pull-left'><li id='navspacer'><p></p></li></div>
+    <div class='nav navbar-nav pull-left'>
+        <li><a style='font-size:30px;cursor:pointer;color: white' onclick="toggleNav()">&#9776;</a></li>
+    </div>
+    <div class='nav navbar-nav pull-left'><li><a href='1_Landingpage.php'>Naar Sectoroverzicht</a></li></div>
+</nav>
+<div style="height:50px;"></div>
+
 <div id="mySidenav" class="sidenav">
-    <img class="Logo" src="images/AOLogo.png" width="100%"; height="100px";>
+    <img class="Logo" src="images/AOLogo.png" style="width:100%;">
     <div class="menusplit"></div>
     <?php CreateNav() ?>
-
 </div>
-
+    
 <div id="main">
+    <!--
     <div class="col-sm-12" style="background-color: #44A0FF;">
-    <span style="font-size:30px;cursor:pointer;color: white" onclick="toggleNav()">&#9776;</span>
+        <span style="font-size:30px;cursor:pointer;color: white" onclick="toggleNav()">&#9776;</span>
     </div>
+    -->
     <div class="col-sm-12 Opdrachten-view">
         <?php
         if (isset($_GET['VakID'])) {
@@ -108,13 +107,24 @@ function generateOpdrachten(){
     // 0 = dicht, 1 = open
     var navOpen = false;
 
+    function getInnerWidth(elem) {
+        return parseFloat(window.getComputedStyle(elem).width);
+    }
+    
     function toggleNav() {
+        var navbar = document.getElementById("navspacer");
+        var sidenav = document.getElementById("mySidenav");
+        var main = document.getElementById("main");
         if (navOpen) {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
+            //close navbar
+            sidenav.style.width = "0";
+            main.style.marginLeft = "0";
+            navbar.style.width = "0";
         } else {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+            //open navbar
+            sidenav.style.width = "250px";
+            main.style.marginLeft = "250px";
+            navbar.style.width = "250px";
         }
         navOpen = !navOpen;
     }
@@ -122,11 +132,7 @@ function generateOpdrachten(){
     function redirect(id, id2) {
         window.location.href = "2_Sectorhome.php?SectorID="+id+"&VakID="+id2;
     }
-    </script>
-
 </script>
-
-
 
 
 

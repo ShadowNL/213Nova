@@ -88,13 +88,12 @@
     background-color: #677887;
     color: white;
 }
-.opdrachten-view{
-    padding: 10px;
-    height: 100%;
-    width: 100%;
-}
 
 /*student opdrachten label css*/
+.student-nav-side-fix{
+    position:fixed;
+    width:100%;
+}
 .opdrachten-label{
     display: block;
     width: 80%;
@@ -134,6 +133,12 @@
     padding-right: 4px;
     color: #44A0FF;
     font-weight: bold;
+}
+.opdrachten-view{
+    z-index:-10;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
 }
 
 /*Docentoverzicht label css*/
