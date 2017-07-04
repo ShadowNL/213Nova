@@ -98,7 +98,7 @@ function GetSelectedSubject(){
             </div>  
         </td>
         <td>
-            <button type=\"button\" value='".$row['OpdrachtID']."' class=\"button-admin\" id=\"myBtn\" name='Edit'>Edit</button>
+            <button type=\"button\" class=\"btn btn-info btn-lg\" id=\"myBtn\" style=\"background-color: transparent!important\">Open Modal</button>
         </td>
         <td>
             <div class='button-delete-admin'>
@@ -116,60 +116,6 @@ function GetSelectedSubject(){
     }
 }
 
-function editmodal()
-{
-    global $conStr;
-    $VakID = $_GET['VakID'];
-    $OpdrachtID = $_GET['Edit'];
-
-
-    $sqlEdit = "SELECT * FROM opdrachten WHERE VakID = $VakID AND OpdrachtID = $OpdrachtID ";
-    $result = $conStr->query($sqlEdit);
-
-    $row = $result->fetch_assoc();
-    echo '
-    <!-- Modal -->
-            <div  style="height: 100%"class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header" style="height: 8% ;padding:2px ;background-color: #ffae63;">
-                            <h3 class="modal-title">   
-                                <center> <p style="color: white">Bestand aanpasen</p></center>
-                            </h3>
-                        </div>
-                        <div class="modal-body">
-                            <div class="modal-body">
-
-                                <form role="form">
-                                    <div class=\"form-group\" style="resize: none">
-                                    <input class=\"form-control\" id=\"title\" placeholder="'.$row["Titel"].'">
-                                    <div class=\"form-group\">
-                                        <textarea class=\"form-control\" style=\"min-width: 100%;overflow-y: scroll ;min-height: 20%; resize: none\" placeholder="'.$row["Omschrijving"].'"></textarea>
-                                    </div>
-
-                                    <div class=\"form-group\" style=\"max-height: 3%\">
-                                    <textarea class=\"form-control\" style=\"max-height: 4.7%; resize: none\" readonly=\"\" placeholder="'.$row["Downloadlink"].'"></textarea>
-                            </div>
-                            </div>
-
-                        </div><div class="modal-footer" style="height: 7% ;padding: 2 2 ;background-color: #ffae63">
-                            <div class="col-sm-4">  <center><button style="background-color:transparent !important"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Verwerp</p></h4></button> </center></div>
-                            <div class="col-sm-4">  </div>
-                            <div class="col-sm-4"> <center><button style="width:100% ;background-color:transparent !important"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Toevoegen</p></h4</button></center> </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    ';
-
-}
-
 ?>
 
 <html>
@@ -179,18 +125,12 @@ function editmodal()
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-        <!--fontawsome link-->
-        <link rel="stylesheet" href="font-awesome/font-awesome-4.7.0/css/font-awesome.min.css">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+ <link rel="stylesheet" href="font-awesome/font-awesome-4.7.0/css/font-awesome.min.css">
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -226,7 +166,60 @@ function editmodal()
                 ?>
             </div>
         </div>
-        <?php editmodal(); ?>
+
+        <div  style="height: 100%"class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="height: 8% ;padding: 2px ;background-color: #ffae63;">
+                        <h3 class="modal-title">
+                            <center> <p style="color: white">File Editor</p></center>
+                        </h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-body">
+
+                            <form role="form">
+                                <div class="form-group">
+
+                                    <input type="email" class="form-control"
+                                           id="exampleInputEmail1" placeholder="Title"/>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" style="min-width: 100%; min-height: 20%" placeholder="Description"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="input-group-btn">
+                                                <span class="btn btn-primary">
+                                                    Browse&hellip; <input type="file" style="display: none;" multiple>
+                                                </span>
+                                        </label>
+                                        <input type="text" class="form-control" readonly>
+                                    </div>
+                                        <span class="help-block">
+                                            Try selecting one or more files and watch the feedback
+                                        </span>
+                                </div>
+                        </div>
+
+
+
+
+
+                    </div><div class="modal-footer" style="height: 7% ;padding: 3 3 ;background-color: #ffae63;">
+                        <div class="col-sm-4">  <center><button style="background-color:transparent !important;"type="button" class="btn btn-primary-outline" onclick="modal-close"><h4><p style="color: white">Verwerp</p></h4></button> </center></div>
+                        <div class="col-sm-4">  </div>
+                        <div class="col-sm-4"> <center><button style="width:100% ;background-color:transparent !important;"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Toevoegen</p></h4</button></center> </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
     </body>
 </html>
 
