@@ -172,7 +172,7 @@ function GetSelectedSubject(){
 
                 <!-- Modal content-->
                 <div class="modal-content">
-                    <div class="modal-header" style="height: 8% ;padding: 12 12 ;background-color: #ffae63;">
+                    <div class="modal-header" style="height: 8% ;padding: 2px ;background-color: #ffae63;">
                         <h3 class="modal-title">
                             <center> <p style="color: white">File Editor</p></center>
                         </h3>
