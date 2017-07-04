@@ -1,3 +1,4 @@
+/*Sidebar css*/
 .sidenav {
     height: 100%;
     width: 0;
@@ -9,7 +10,6 @@
     overflow-x: hidden;
     transition: 0.5s;
 }
-
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -18,11 +18,9 @@
     display: block;
     transition: 0.3s;
 }
-
 .sidenav a:hover, .offcanvas a:focus{
     color: #818181;
 }
-
 .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -30,21 +28,45 @@
     font-size: 36px;
     margin-left: 50px;
 }
-
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
 
+/*main class css*/
 #main {
     transition: margin-left .5s;
     padding: 0px;
 }
+
+/*Landing page css*/
+.landing-button-panel{
+    min-width: 200px;
+    max-width: 400px;
+    min-height: 180px;
+    max-height: 400px;
+    height: 32%;
+    background-color:#8da9fc;
+    border-radius:0;
+    cursor:pointer;
+}
+.landing-button-panel:hover{
+    -webkit-box-shadow: 0 0 1px 3px #000 inset;
+    -moz-box-shadow: 0 0 1px 3px #000 inset;
+    box-shadow: 0 0 1px 3px #000 inset;
+}
+.landing-button-name{
+    font-weight: bold;
+    font-size: 2em;
+    line-height:110%;
+    text-align:left;
+    margin:2%;
+}
+.landing-img{
+    width: 98%;
+    margin: 1%;
+}
+/*menu css*/
 .menusplit{
     height: 20px;
     width: 100%;
@@ -52,7 +74,6 @@
     border-style: solid;
     border-width: 2px;
 }
-
 .MenuItem {
     width: 240px;
     height: 40px;
@@ -62,7 +83,6 @@
     margin-top: 4px;
     background-color: #434343;
     color:white;
-
 }
 .MenuItem:hover{
     background-color: #677887;
@@ -74,7 +94,7 @@
     width: 100%;
 }
 
-/*Opdrachten label css*/
+/*student opdrachten label css*/
 .opdrachten-label{
     display: block;
     width: 80%;
@@ -161,7 +181,7 @@
     opacity: 0.5;
 }
 
-/**/
+/*misc css*/
 .logo{
     display: block;
     position: relative;
@@ -174,6 +194,58 @@
     font-weight: bold;
     float: right;
     padding: 10px;
+}
+
+/*Admin label and button css*/
+.opdrachten-label-admin{
+    width: 250px;
+    height: 30px;
+    padding: 5px;
+    margin: 10px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #434343;
+}
+.button-admin {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+    height: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+}
+.button-admin:hover {
+    background-color: #3e8e41
+}
+.button-admin:active {
+    background-color: #3e8e41;
+    transform: translateY(4px);
+}
+.button-delete-admin {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+    height: 30px;
+    width: 60px;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #f44242;
+    border: none;
+}
+.button-delete-admin:hover {
+    background-color: #bf3131
+}
+.button-delete-admin:active {
+    background-color: #bf3131;
+    transform: translateY(4px);
 }
 
 /*blue custom navbar*/
@@ -215,59 +287,4 @@
 }
 .navbar-custom-blue .icon-bar {
     background-color:#33aa33;
-}
-
-.opdrachten-label-admin{
-    width: 250px;
-    height: 30px;
-    padding: 5px;
-    margin: 10px;
-    border-style: solid;
-    border-width: thin;
-    border-color: #434343;
-}
-.button-admin {
-    display: inline-block;
-    cursor: pointer;
-    padding: 5px;
-    height: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-}
-
-.button-admin:hover {
-    background-color: #3e8e41
-}
-
-.button-admin:active {
-    background-color: #3e8e41;
-    transform: translateY(4px);
-}
-.button-delete-admin {
-    display: inline-block;
-    cursor: pointer;
-    padding: 5px;
-    height: 30px;
-    width: 60px;
-    margin-left: 10px;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #f44242;
-    border: none;
-}
-
-.button-delete-admin:hover {
-    background-color: #bf3131
-}
-
-.button-delete-admin:active {
-    background-color: #bf3131;
-    transform: translateY(4px);
 }

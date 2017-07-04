@@ -106,6 +106,7 @@ function generateDocenten(){
             <div class="navbar-custom-blue-brand">Docenten Overzicht</div>
         </nav>
         <div style="height:50px;"></div>
+        
         <div class="container-fluid" style="">
             <div class='row' style="font-size:30px;color:#A0A0A0;">
                 <div class='col-sm-2'></div>

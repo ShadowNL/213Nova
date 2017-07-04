@@ -1,88 +1,89 @@
 <html>
-    <head>
-        <title>landingpage</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>landingpage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
 
-
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-        
-    </head>
-    <body>
-        <div class="container-fluid">
-            <div class="col-sm-4" style="background-color: #44A0FF; height: 10%">
-                <p class="text-white"><h2><center>  </center></h2></p>
-            </div>
-             <div class="col-sm-4" style="background-color: #44A0FF; height: 10%">
-                <p class="text-white"><h2><center> Sector Page </center></h2></p>
-            </div>
-             <div class="col-sm-4" style="background-color: #44A0FF; height: 10%">
-                 <p class="text-white"><h2><center> <a href="3_adminlogin.php" class="button">Admin</a> </center></h2></p>
-            </div>
-
-            <div class="row row-centered">
-                <div class="col-xs-3 col-centered" style="height: 13%"></div>
-            </div>
-
-            <div class="row row-centered">
-
-                <div class="col-xs-4 col-centered" >
-                    <div class="panel panel-default" id="1" style="background-color: #8da9fc">
-                        <div id="res" onclick="redirect(1)" class="panel-body" style="height: 20%; font-size: 2em;  "><center><h2>Applicatie Ontwikkelaar</h2></center></div>
-
-                    </div>
-                </div>
-                <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div onclick="redirect(2) "class="panel-body" style="height: 20%; padding: 8% 0;  "><center><h2>ICT Helpdesk</h2></center></div>
-
-                    </div>
-                </div>
-                <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div onclick="redirect(3)" class="panel-body" style="height: 20%; padding: 8% 0;  "><center><h2>Netwerk Beheer</h2></center></div>
-
-                    </div>
+</head>
+<body>
+    <nav class="navbar navbar-custom-blue navbar-fixed-top">
+        <div class="navbar-custom-blue-brand">ICT Academie 213Server</div>
+        <div class='nav navbar-nav pull-right'>
+            <li><a href='3_adminlogin.php'>Admin login</a></li>
+        </div>
+    </nav>
+    <div style="height:50px;"></div>
+    
+    <div class="container-fluid" style='min-width:600px;max-width:1200px;width:70%;'>
+        <div class="row row-centered">
+            <div class="col-xs-3 col-centered" style="height: 12%;"></div>
+        </div>
+        <div class="row row-centered">
+            <div class="col-xs-4">
+                <div onclick="redirect(1)" class="panel panel-default landing-button-panel">
+                    <img class="landing-img" src="images/Landingimg_AO.png" alt="Applicatie-Ontwikkelaar">
+                    <div class="landing-button-name">Applicatie Ontwikkelaar</div>
                 </div>
             </div>
-
-            <div class="row row-centered">
-
-                <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default clearfix" style="background-color: #8da9fc">
-                        <div class="panel-body" style="height: 20%;  padding: 7% 0;  "><center><h2>Docent Overzicht</h2></center></div>
-
-                    </div>
+            <div class="col-xs-4">
+                <div onclick="redirect(2)" class="panel panel-default landing-button-panel">
+                    <img class="landing-img" src="images/Landingimg_ICTB.png" alt="ICT Beheer">
+                    <div class="landing-button-name">ICT Beheer</div>
                 </div>
-                <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div class="panel-body clearfix" style="height: 20%; padding: 7% 0;  "><center><h2>Loopbaan Begeleiding</h2></center></div>
-
-                    </div>
-                </div>
-                <div class="col-xs-4 col-centered">
-                    <div class="panel panel-default" style="background-color: #8da9fc">
-                        <div class="panel-body clearfix" style="height: 20%; padding: 7% 0;  "><center><h2>Rooster</h2></center></div>
-
-                    </div>
+            </div>
+            <div class="col-xs-4">
+                <div onclick="redirect(3)" class="panel panel-default landing-button-panel">
+                    <img class="landing-img" src="images/Landingimg_NETB.png" alt="Netwerk Beheer">
+                    <div class="landing-button-name">Netwerk Beheer</div>
                 </div>
             </div>
         </div>
-    </body>
+        <div class="row row-centered">
+            <div class="col-xs-4">
+                <div onclick="toPage('docentenoverzicht')" class="panel panel-default landing-button-panel">
+                    <img class="landing-img" src="images/Landingimg_Teach.png" alt="Docenten Overzicht">
+                    <div class="landing-button-name">Docenten Overzicht</div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div onclick="" class="panel panel-default landing-button-panel">
+                    <img class="landing-img" src="images/Landingimg_Teach.png" alt="Loopbaan Begeleiding">
+                    <div class="landing-button-name">Loopbaan Begeleiding</div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div onclick="toPage('rooster')" class="panel panel-default landing-button-panel">
+                    <img class="landing-img" src="images/Landingimg_Rooster.png" alt="Xedule Roosterpagina">
+                    <div class="landing-button-name">Rooster</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
 <script>
 function redirect(id) {
     window.location.href = "2_Sectorhome.php?SectorID="+id;
 }
+function toPage(id){
+    switch(id){
+        case "docentenoverzicht": 
+            window.location.href = "docentenoverzicht.php";
+            break;
+        case "rooster":
+            window.location.href = "https://roosters.xedule.nl/OrganisatorischeEenheid/Attendees/102?Code=Laurens%20Baecklaan&OrgId=20";
+            break;
+        default: break;
+    }
+}
 </script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="jquery.fittext.js"></script>
 <script>
