@@ -59,16 +59,18 @@ function Geterror()
                         </div>
                     </div>
                                 <div class="panel-footer" style="background-color: #ffae63">
-                                    <div class="pull-left" id="SectorPage">
-                                        <button class="btn" >Terug naar Sectoren</button>
-                                    </div>
+
 
                                     <div class="pull-right" id="Login">
                                         <button class="btn"  type="submit">Login</button>
                                     </div>
+                                    </form>
+                                    <div class="pull-left" id="SectorPage">
+                                        <a href="1_Landingpage.php" style="color: black"><button class="btn" >Terug naar Sectoren</button></a>
+                                    </div>
                                     <div class="clearfix"></div>
+
                                 </div>
-                            </form>
 
 
             </div>
