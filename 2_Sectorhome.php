@@ -89,7 +89,7 @@ function generateOpdrachten(){
         <span style="font-size:30px;cursor:pointer;color: white" onclick="toggleNav()">&#9776;</span>
     </div>
     -->
-    <div class="col-sm-12 Opdrachten-view">
+    <div class="col-sm-12 opdrachten-view">
         <?php
         if (isset($_GET['VakID'])) {
             generateOpdrachten();
