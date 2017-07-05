@@ -109,8 +109,9 @@ function GetSelectedSubject() {
                  </center>";
         }
     } else {
-        if ($VakID != -1)
+        if ($VakID != -1){
             echo "Geen opdrachten in dit vak gevonden";
+        }
     }
 }
 

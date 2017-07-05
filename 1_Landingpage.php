@@ -72,9 +72,10 @@ function redirect(id) {
 }
 function toPage(id){
     switch(id){
+        case "sectoroverzicht":
+            window.location.href = "1_Landingpage.php"; break;
         case "docentenoverzicht": 
-            window.location.href = "docentenoverzicht.php";
-            break;
+            window.location.href = "docentenoverzicht.php"; break;
         case "rooster":
             window.location.href = "https://roosters.xedule.nl/OrganisatorischeEenheid/Attendees/102?Code=Laurens%20Baecklaan&OrgId=20";
             break;

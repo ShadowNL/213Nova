@@ -100,10 +100,8 @@ function generateDocenten(){
 <body>
     <div id="main">
         <nav class="navbar navbar-custom-blue navbar-fixed-top">
-            <div class="nav navbar-nav">
-                <li class='pull-left'><a href="1_Landingpage.php">Naar Sectoroverzicht</a></li>
-            </div>
-            <div class="navbar-custom-blue-brand">Docenten Overzicht</div>
+            <div class="nav navbar-nav navbar-custom-blue-brand">Docenten Overzicht</div>
+            <div class='nav navbar-nav pull-left'><li><a href='1_Landingpage.php'>Naar Sectoroverzicht</a></li></div>
         </nav>
         <div style="height:50px;"></div>
         
@@ -124,5 +122,19 @@ function generateDocenten(){
     </div>
 </body>
 </html>
+<script>
+function toPage(id){
+    switch(id){
+        case "sectoroverzicht":
+            window.location.href = "1_Landingpage.php"; break;
+        case "docentenoverzicht": 
+            window.location.href = "docentenoverzicht.php"; break;
+        case "rooster":
+            window.location.href = "https://roosters.xedule.nl/OrganisatorischeEenheid/Attendees/102?Code=Laurens%20Baecklaan&OrgId=20";
+            break;
+        default: break;
+    }
+}
+</script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
