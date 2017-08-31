@@ -114,17 +114,20 @@ function GetSelectedSubject() {
     }
 }
 
-function editmodal() {
+function editmodal()
+{
     global $conStr;
     $VakID = $_GET['VakID'];
     $OpdrachtID = $_GET['Edit']; //GET variable does not exist ... is does u dimwitt
 
-    $sqlEdit = "SELECT * FROM opdrachten WHERE VakID = ".$VakID."AND OpdrachtID = ".$OpdrachtID;
+    $sqlEdit = "SELECT * FROM opdrachten WHERE VakID = " . $VakID . "AND OpdrachtID = " . $OpdrachtID;
     $result = $conStr->query($sqlEdit);
 
-   //$row = $result->fetch_assoc();
-    
-    echo '
+    if ($result && $result->num_rows > 0) {
+//output data of each row
+        while ($row = $result->fetch_assoc()) {
+
+            echo '
         <div  style="height: 100%"class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -158,6 +161,8 @@ function editmodal() {
             </div>
         </div>
     ';
+        }
+    }
 }
 ?>
 
@@ -215,23 +220,9 @@ function editmodal() {
                 ?>
             </div>
         </div>
-        
-        <?php
-        if (isset($_GET['VakID'])) {
-            editmodal();
-        }
-        ?>
 
     </body>
 </html>
-<script>
-    $(document).ready(function () {
-        $("#myBtn").click(function () {
-            $("#myModal").modal();
-        });
-    });
-
-</script>
 <script>
     // 0 = dicht, 1 = open
     var navOpen = false;
@@ -255,34 +246,32 @@ function editmodal() {
         window.location.href = "Logout.php"
     }
 </script>
-
 <script>
-    $(function () {
-
-        // We can attach the `fileselect` event to all file inputs on the page
-        $(document).on('change', ':file', function () {
-            var input = $(this),
-                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
-                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-            input.trigger('fileselect', [numFiles, label]);
-        });
-
-        // We can watch for our custom `fileselect` event like this
-        $(document).ready(function () {
-            $(':file').on('fileselect', function (event, numFiles, label) {
-
-                var input = $(this).parents('.input-group').find(':text'),
-                        log = numFiles > 1 ? numFiles + ' files selected' : label;
-
-                if (input.length) {
-                    input.val(log);
-                } else {
-                    if (log)
-                        alert(log);
-                }
-
-            });
-        });
-
+    // new gesprek
+    $("#newGesprek").click(function () {
+        var VakID = 1;
+        var OpdrachtID = 3;
+        var Title = 'test';
+        $("#EditModalTitle").html("opdracht aanpassen - " + Title );
+        $('#EditModal').modal('show');
     });
+
+    $("#saveGesprek").click(function () {
+        var OV = $("#Sel").val();
+        var gesprek = $("#formPostDescription").val();
+        postData = {
+            'Select_Student': OV,
+            'formPostDescription': gesprek,
+        }
+
+        // ajax request to post the new 'gesprek'
+        $.ajax({
+            type: "POST",
+            data: postData,
+            url: "NewGesprek.php",
+            success: function (data) {
+                $('#EditModal').modal('hide');
+            }
+        });
+    })
 </script>
