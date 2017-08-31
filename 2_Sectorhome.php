@@ -14,15 +14,44 @@ if(isset($_GET['VakID'])){
     $VakID = $_GET['VakID'];
 }
 
-function CreateNav(){
+function echoGet($var){
+    if(isset($_GET[$var])) {
+        echo $_GET[$var];
+    }
+}
+
+function chooseLogo(){
+    global $SectorID;
+    switch($SectorID){
+        case 1: echo "'images/Sectorimg_AO.png'";
+        case 2: echo "'images/Sectorimg_ICTB.png'";
+        case 3: echo "'images/Sectorimg_NETB.png'";
+    }
+}
+
+function generateHelp(){
+    echo "
+        <div class='opdrachten-label'>
+            <div class='opdrachten-label-header'><b>
+            Welkom op ICT Academie 213Server
+            </b></div>
+            <div class='opdrachten-label-textbox'>
+                Klik op de knop linksbovenin om de vakken weer te geven
+                <br>Klik op een vak om de opdrachten weer te geven
+            </div>
+        </div>  ";
+}
+
+function createNav(){
     global $conStr;
     global $SectorID;
+    global $NavOpen;
     $sqlNav = "SELECT * FROM vakken WHERE SectorID =" . $SectorID ;
     $result = $conStr->query($sqlNav);
     if ($result && $result->num_rows > 0) {
         //output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo'<center><div onclick="redirect(' . $SectorID.',' . $row["VakID"] . ')" class="MenuItem">'
+            echo'<center><div onclick="redirect('.$SectorID.','.$row["VakID"].','.$NavOpen.')" class="MenuItem">'
              . $row["Vaknaam"] . "</div>";
         }
     } else {
@@ -32,15 +61,12 @@ function CreateNav(){
 
 function generateOpdrachten(){
         global $conStr;
-        global $SectorID;
         global $VakID;
         $sqlNav = "SELECT * FROM opdrachten WHERE VakID =" .$VakID;
         $result = $conStr->query($sqlNav);
-        if ($result && $result->num_rows > 0) {
-            //output data of each row
+        if ($result && $result->num_rows > 0) { //output data of each row
             while ($row = $result->fetch_assoc()) {
-                echo "<center>
-                        <div class='opdrachten-label'>
+                echo "  <div class='opdrachten-label'>
                             <div class='opdrachten-label-header'><b>".$row["Titel"] . "</b></div>
                             <div class='opdrachten-label-textbox'>". $row["Omschrijving"] ."</div>
                             <div class='opdrachten-label-teacher'> leraar: ". $row["Verantwoordelijke"] .
@@ -48,10 +74,10 @@ function generateOpdrachten(){
                                     <a href=".$row["Downloadlink"]." download>download</a>
                                 </div>
                             </div>
-                        </div>
-                     </center>";
+                        </div>  ";
             }
-        } else { 
+        } 
+        else { 
             echo "Geen opdrachten in dit vak gevonden";
         }
 }
@@ -78,21 +104,19 @@ function generateOpdrachten(){
 <div style="height:50px;"></div>
 
 <div id="mySidenav" class="sidenav">
-    <img class="Logo" src="images/AOLogo.png" style="width:100%;">
-    <div class="menusplit"></div>
-    <?php CreateNav() ?>
+    <a class="imglink" href="2_Sectorhome.php?SectorID=1">
+        <img class="Logo" src=<?php chooseLogo(); ?> style="width:100%;">
+    </a>
+    <?php createNav() ?>
 </div>
-    
+
 <div id="main">
-    <!--
-    <div class="col-sm-12" style="background-color: #44A0FF;">
-        <span style="font-size:30px;cursor:pointer;color: white" onclick="toggleNav()">&#9776;</span>
-    </div>
-    -->
-    <div class="col-sm-12 opdrachten-view">
+    <div class="container-fluid opdrachten-view">
         <?php
         if (isset($_GET['VakID'])) {
             generateOpdrachten();
+        } else {
+            generateHelp();
         }
         ?>
     </div>
@@ -106,7 +130,6 @@ function generateOpdrachten(){
 <script>
     // 0 = dicht, 1 = open
     var navOpen = false;
-
     function getInnerWidth(elem) {
         return parseFloat(window.getComputedStyle(elem).width);
     }
@@ -129,8 +152,8 @@ function generateOpdrachten(){
         navOpen = !navOpen;
     }
 
-    function redirect(id, id2) {
-        window.location.href = "2_Sectorhome.php?SectorID="+id+"&VakID="+id2;
+    function redirect(id, id2, open) {
+        window.location.href = "2_Sectorhome.php?SectorID="+id+"&VakID="+id2+"&NavOpen="+open;
     }
 </script>
 
