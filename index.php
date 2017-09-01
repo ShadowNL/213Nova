@@ -19,10 +19,14 @@ global $SectorID;
 global $VakID;
 $sqlNav = "SELECT * FROM opdrachten WHERE VakID =" . $VakID;
 $result = $conStr->query($sqlNav);
+
+$link = $_SERVER['PHP_SELF'];
+$link_array = explode('/',$link);
+$urlpart = end($link_array);
 if ($result && $result->num_rows > 0) {
     //output data of each row
     while ($row = $result->fetch_assoc()) {
-        if (isset($_SESSION["username"])) {
+        if ($urlpart === "4_adminoverview.php") {
             echo "<center>
                     <table>
                         <tr>

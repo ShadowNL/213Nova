@@ -7,4 +7,3 @@ $Vaknaam = $_POST['vak'];
 $sqlAddSubject = "INSERT INTO `vakken`(`SectorID`, `Vaknaam`) VALUES ($SectorID,'$Vaknaam')";
 
 $result = $conStr->query($sqlAddSubject);
-header("Location: 4_adminoverview.php");

@@ -16,6 +16,9 @@ function GetUsername() {
     }
 }
 
+
+
+
 function GetVakken() {
     global $conStr;
     global $SectorID;
