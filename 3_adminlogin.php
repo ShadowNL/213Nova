@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-    if(isset($_POST['hidden'])){
-        include('DatabaseConnection.php');
+if(isset($_POST['hidden'])){
+    include('DatabaseConnection.php');
 
-        $username = $_POST['Username'];
-        $password = $_POST['Password'];
-    }
+    $username = $_POST['Username'];
+    $password = $_POST['Password'];
+}
 
 
 function Geterror()
@@ -43,41 +43,43 @@ function Geterror()
 
             </div>
             <div class="col-xs-6">
-                <div class="panel panel-default" style="height: 43% ; border: none !important">
-                    <div class="panel-heading-custom" style="background-color: #ffae63 ; height: 15%"><h2><center>Inloggen als Docent</center></h2></div>
-                    <div class="panel-body" style="height: 65%  ; background-color: #ffedbf ">
-                        <div >
-                            <form action="redirect.php" method="post">
-
-                                <center>Username:<input type="text" name="user" ></center>
-
-                                <p> &nbsp;</p>
-                                <center>Password:<input type="password" name="pass"  ></center>
-                                <p>&nbsp;</p>
-                                &nbsp;
-                                <center><label style="color: red"><?php Geterror(); ?></label></center>
+                <div class="panel panel-default" style="min-height:150px; height:43%; min-width:400px; border:none !important; padding:0;">
+                    <!--Heading-->
+                    <div class="panel-heading-custom" style="background-color:#ffae63; min-height:25px; height:15%;">
+                        <div style="color:white; text-align:center; font-weight: bold; font-size:calc(15px + 1em); font-size:calc(15px + 1vw);">
+                            Inloggen als Docent
                         </div>
                     </div>
-                                <div class="panel-footer" style="background-color: #ffae63">
+                    <!--Login-->
+                    <div class="panel-body" style="height: 65%; background-color: #ffedbf ">
+                        <div style="min-width:100px; width:50%; position:absolute; top:50%; left:50%; transform:translateX(-50%) translateY(-50%);">
+                            <form action="redirect.php" method="post">
+                                <input type="text" name="user" placeholder="Gebruikersnaam" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
+                                <input type="password" name="pass" placeholder="Wachtwoord" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
+                                <label style="color:red;"><?php Geterror(); ?></label>
+                                <br>
+                        </div>
+                    </div>
+                    <!--Footer-->
+                    <div class="panel-footer" style="background-color: #ffae63; padding:0; height:13%;">
+                        <!--Submit button for login-->
+                        <button class="pull-right button-admin-login" type="submit">Login</button>
+                        </form>
+                        <!--Back to landingpage-->
+                        <a href="1_Landingpage.php" style="color: black">
+                            <button class="pull_left button-admin-login" type="submit">Terug naar Sectoren</button>
+                        </a>
+                        
+                        <div class="clearfix"></div>
 
-
-                                    <div class="pull-right" id="Login">
-                                        <button class="btn"  type="submit">Login</button>
-                                    </div>
-                                    </form>
-                                    <div class="pull-left" id="SectorPage">
-                                        <a href="1_Landingpage.php" style="color: black"><button class="btn" >Terug naar Sectoren</button></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-
-                                </div>
+                    </div>
 
 
             </div>
             <div class="col-xs-3">
 
             </div>
-
+        </div>
 
     </body>
 </html>
