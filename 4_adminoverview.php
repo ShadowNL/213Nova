@@ -28,51 +28,11 @@ function GetVakken() {
     if ($result && $result->num_rows > 0) {
         //output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo'<center><div onclick="redirect(' . $row["SectorID"] . ',' . $row["VakID"] . ')" class="MenuItem">' .
-            $row["Vaknaam"] . "</div>";
+            echo'<center><div sector=' . $row["SectorID"] . ' vak=' . $row["VakID"] . ' class="MenuItem">' .
+            $row["Vaknaam"] . "</div></center>";
         }
     } else {
         echo "Geen vakken in deze sector gevonden";
-    }
-}
-
-function OpenAddSubject() {
-    if (isset($_GET['VakID'])) {
-        $VakID = $_GET['VakID'];
-
-        if ($_GET['SectorID'] == -1 || $_GET['VakID'] == -1) {
-            echo "<center><div class=\"\" style=\"margin: 20px; width: auto; height: auto\">
-                    <h2>Vak Toevoegen</h2>
-                    </br>
-                    <form method='post' action='AddSubject.php'>
-                    <table style=\"border-color: transparent\">
-                        <tr>
-                            <td>Select sector:</td>
-                            <td><select name='sector' id='sector' style='width: 200px; height: 25px;'>
-                                        <option value=\"\">Select...</option>
-                                        <option value=\"1\">Applicatieontwikkeling</option>
-                                        <option value=\"2\">Netwerk beheer</option>
-                                        <option value=\"3\">Service desk</option>
-                                    </select></td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>Vak naam:</td>
-                            <td><input type=\"text\" name=\"vak\" style='width: 200px; height: 25px;' ></td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td><button type=\"submit\" style=\"float: left;\">Add</button></td>
-                        </tr>
-                    </table>
-                    </form>
-                </div>";
-        }
     }
 }
 
@@ -115,56 +75,6 @@ function GetSelectedSubject() {
     }
 }
 
-function editmodal()
-{
-    global $conStr;
-    $VakID = $_GET['VakID'];
-    $OpdrachtID = $_GET['Edit']; //GET variable does not exist ... is does u dimwitt
-
-    $sqlEdit = "SELECT * FROM opdrachten WHERE VakID = " . $VakID . "AND OpdrachtID = " . $OpdrachtID;
-    $result = $conStr->query($sqlEdit);
-
-    if ($result && $result->num_rows > 0) {
-//output data of each row
-        while ($row = $result->fetch_assoc()) {
-
-            echo '
-        <div  style="height: 100%"class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header" style="height: 8% ;padding:2px ;background-color: #ffae63;">
-                        <h3 class="modal-title">   
-                            <center> <p style="color: white">Bestand aanpasen</p></center>
-                        </h3>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-body">
-                            <form role="form">
-                                <div class=\"form-group\" style="resize: none">
-                                    <input class=\"form-control\" id=\"title\" placeholder="' . $row["Titel"] . '">
-                                        <div class=\"form-group\">
-                                            <textarea class=\"form-control\" style=\"min-width: 100%;overflow-y: scroll ;min-height: 20%; resize: none\" placeholder="' . $row["Omschrijving"] . '"></textarea>
-                                        </div>
-                                        <div class=\"form-group\" style=\"max-height: 3%\">
-                                            <textarea class=\"form-control\" style=\"max-height: 4.7%; resize: none\" readonly=\"\" placeholder="' . $row["Downloadlink"] . '"></textarea>
-                                         </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="modal-footer" style="height: 7% ;padding: 2 2 ;background-color: #ffae63">
-                            <div class="col-sm-4">  <center><button style="background-color:transparent !important"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Verwerp</p></h4></button> </center></div>
-                            <div class="col-sm-4">  </div>
-                            <div class="col-sm-4"> <center><button style="width:100% ;background-color:transparent !important"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Toevoegen</p></h4</button></center> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    ';
-        }
-    }
-}
 ?>
 
 <html>
@@ -175,7 +85,10 @@ function editmodal()
         
          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
+    <scrip src="http://code.jquery.com/jquery-1.7.1.min.js"></scrip>
+    <script src="js/General.js"></script>    
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
           <link rel="stylesheet" href="font-awesome/font-awesome-4.7.0/css/font-awesome.min.css">
        <!-- Latest compiled and minified CSS -->
@@ -191,12 +104,13 @@ function editmodal()
     </head>
     <body>
 
-
         <div id="mySidenav" class="sidenav">
             <img class="Logo" src="images/Adminlogo.png" width="100%" height="100px">
             <div class="menusplit"></div>
+
             <?php GetVakken(); ?>
-            <div onclick="redirect(-1, -1)" class="MenuItem"><span class="glyphicon glyphicon-plus-sign"></span></div>
+
+            <center><div id="addsubject" class="MenuItem"><a style="color: white; font-size: 100%;" href="AddSubject">Add</a></div></center>
         </div>
 
         <div id="main">
@@ -210,17 +124,14 @@ function editmodal()
                 </span>
 
             </div>
-            <div class="col-sm-12" style="height: 28%"></div>
-            <div class="col-sm-12 Opdrachten-view" style="max-height: 65%">
-                <?php
-                OpenAddSubject();
-
-                if (isset($_GET['VakID'])) {
-                    GetSelectedSubject();
-                }
-                ?>
+            <!--
+            <div class="col-sm-12" style="height: 28%">
             </div>
+           -->
+            <div id="content"></div>
         </div>
+        <!-- de div hier beneden mag niet in de main!!!!!!!!!!-->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     </body>
 </html>

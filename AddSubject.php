@@ -1,10 +1,42 @@
 <?php
-include "DatabaseConnection.php";
-
-$SectorID = $_POST['sector'];// 0 = gonna be get posts
-$Vaknaam = $_POST['vak'];
-
-$sqlAddSubject = "INSERT INTO `vakken`(`SectorID`, `Vaknaam`) VALUES ($SectorID,'$Vaknaam')";
-
-$result = $conStr->query($sqlAddSubject);
-header("Location: 4_adminoverview.php");
+?>
+<html>
+<head>
+</head>
+<body>
+<center>
+    <div class="" style="margin: 20px; width: auto; height: auto">
+        <h2>Vak Toevoegen</h2>
+        </br>
+        <form method='post' action='AddSubjectSQL.php'>
+            <table style="border-color: transparent">
+                <tr>
+                    <td>Select sector:</td>
+                    <td><select name='sector' id='sector' style='width: 200px; height: 25px;'>
+                            <option value="">Select...</option>
+                            <option value="1">Applicatieontwikkeling</option>
+                            <option value="2">Netwerk beheer</option>
+                            <option value="3">Service desk</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Vak naam:</td>
+                    <td><input type="text" name="vak" style='width: 200px; height: 25px;'></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <button type="submit" style="float: left;">Add</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

@@ -5,14 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!--fontawsome link-->
-        <link rel="stylesheet" href="font-awesome/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../font-awesome/font-awesome-4.7.0/css/font-awesome.min.css">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
+        <link rel="stylesheet" type="text/css" href="../offcanvas.css"/>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -25,38 +25,27 @@
             <button type="button" class="btn btn-info btn-lg" id="myBtn" style="background-color: transparent!important">Open Modal</button>
 
             <!-- Modal -->
-            <div  style="height: 120%"class="modal fade" id="myModal" role="dialog">
+            <div  style="height: 100%"class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
 
                     <!-- Modal content-->
                     <div class="modal-content">
-                        <div class="modal-header" style="height: 6% ;padding: 12 12 ;background-color: #44A0FF;">
+                        <div class="modal-header" style="height: 8% ;padding: 12 12 ;background-color: #ffae63;">
                             <h3 class="modal-title">   
-                                <center> <p style="color: white">View </p></center>
+                                <center> <p style="color: white">Bestand aanpasen</p></center>
                             </h3>
                         </div>
                         <div class="modal-body">
-                            <div class="modal-body">
+                            <div class="modal-body" style="height: 25%">
 
-                                <form role="form">
-                                    <div class="form-group">
-                                        <textarea class="form-control"readonly="asdfad"  style="max-height: 35px">{hier komt de naam van het ingeladen bestand}</textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control" style="min-width: 100%; min-height: 20%" placeholder="View"> </textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        
-                                        </div>
-                                       
-                                    </div>
+                                <h2><p style="color: red"> Weet u zeker dat u (bestandsnaam)uit (vaknaam) wilt verwijdere? </p></h2>
                             </div>
 
-                           <div class="modal-footer" style="height: 6% ;padding: 3 3 ;background-color: #44A0FF;">
-                                <div class="col-sm-4">  <center><button style="background-color:transparent !important;"type="button" class="btn btn-primary-outline" onclick="modal-close"><h4><p style="color: white">Terug</p></h4></button> </center></div>
+                        </div><div class="modal-footer" style="height: 7% ;padding: 1 1 ;background-color: #ffae63">
+                            <div class="col-sm-4">  <center><button style="background-color:transparent !important"type="button" class="btn btn-primary-outline" ><h4><p style="color: white">Nee, ga terug</p></h4></button> </center></div>
                             <div class="col-sm-4">  </div>
-                            <div class="col-sm-4"> <center><button style="width:100% ;background-color:transparent !important;"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Download</p></h4</button></center> </div>
-                           
+                            <div class="col-sm-4"> <center><button style="width:100% ;background-color:transparent !important"type="button" class="btn btn-primary-outline"><h4><p style="color: white">Ja, verwijder</p></h4</button></center> </div>
+
                         </div>
                     </div>
 
