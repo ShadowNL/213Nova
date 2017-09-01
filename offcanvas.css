@@ -302,6 +302,9 @@ a.imglink:hover img{
     color:#ffffff;
     border-radius:0;
 }
+.navbar-custom-blue.nav-orange {
+    background-color:#FF9900;
+}
 .navbar-custom-blue .navbar-nav > li > a {
     font-size:16px;
     font-weight:bold;
@@ -318,6 +321,13 @@ a.imglink:hover img{
 .navbar-custom-blue .navbar-nav > .open >a {
     text-decoration: none;
     background-color: #A1CFFF;
+}
+.navbar-custom-blue.nav-orange .navbar-nav > li > a:hover,
+.navbar-custom-blue.nav-orange .navbar-nav > li > a:focus,
+.navbar-custom-blue.nav-orange .navbar-nav > .active > a:hover,
+.navbar-custom-blue.nav-orange .navbar-nav > .active > a:focus,
+.navbar-custom-blue.nav-orange .navbar-nav > .open >a {
+    background-color: #FFCC66;
 }
 .navbar-custom-blue-brand{
     position:absolute;
@@ -336,4 +346,6 @@ a.imglink:hover img{
 .navbar-custom-blue .icon-bar {
     background-color:#33aa33;
 }
-
+.navbar-custom-blue.nav-orange .icon-bar {
+    background-color:#33aa33;
+}

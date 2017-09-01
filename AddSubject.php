@@ -5,19 +5,19 @@
 </head>
 <body>
 <center>
-    <div class="" style="margin: 20px; width: auto; height: auto">
-        <h2>Vak Toevoegen</h2>
+    <div class="" style="margin: 0px; width: auto; height: auto;">
+        <h2 style='margin:0;'>Vak Toevoegen</h2>
         </br>
         <form method='post' action='AddSubjectSQL.php'>
             <table style="border-color: transparent">
                 <tr>
                     <td>Select sector:</td>
                     <td><select name='sector' id='sector' style='width: 200px; height: 25px;'>
-                            <option value="">Select...</option>
-                            <option value="1">Applicatieontwikkeling</option>
-                            <option value="2">Netwerk beheer</option>
-                            <option value="3">Service desk</option>
-                        </select></td>
+                        <option value="">Select...</option>
+                        <option value="1">Applicatieontwikkeling</option>
+                        <option value="2">Netwerk beheer</option>
+                        <option value="3">Service desk</option>
+                    </select></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -38,5 +38,6 @@
             </table>
         </form>
     </div>
+</center>
 </body>
 </html>

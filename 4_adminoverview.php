@@ -107,23 +107,35 @@ function GetSelectedSubject() {
         <div id="mySidenav" class="sidenav">
             <img class="Logo" src="images/Adminlogo.png" width="100%" height="100px">
             <div class="menusplit"></div>
-
             <?php GetVakken(); ?>
-
             <center><div id="addsubject" class="MenuItem"><a style="color: white; font-size: 100%;" href="AddSubject">Add</a></div></center>
         </div>
-
+        
         <div id="main">
-            <div class="col-sm-12" style="background-color: #ffae63">
-                <span style="font-size:30px;cursor:pointer;color: white"  onclick="toggleNav()">&#9776;</span>
-                <span class="pull-right Loggedinas" style="padding: 0 0"> Welcome <?php GetUsername(); ?>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
+            <!--navbar-->
+            <nav class="navbar navbar-custom-blue nav-orange student-nav-side-fix">
+                <div  class='nav navbar-nav pull-left'><li id='navspacer'><p></p></li></div>
+                <div class='nav navbar-nav pull-left'>
+                    <li><a style='font-size:30px;cursor:pointer;color: white' onclick="toggleNav()">&#9776;</a></li>
+                </div>
+                <div class='nav navbar-nav pull-left'><li><a href='1_Landingpage.php'>Naar Sectoroverzicht</a></li></div>
+                
+                <span class="pull-right Loggedinas" style="padding: 0 0"> Welcome <?php //GetUsername(); ?></span>
+                <div class='nav navbar-nav pull-right'><li>
                     <button onclick="logout()" style="margin: 0em; background-color:transparent !important "type="submit" class="btn btn-primary-outline">
-                        <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
-                    </button>
+                    <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
+                </button></li></div>
+            </nav>
+            <!--
+            <div class="col-sm-12" style="background-color: #FF9900">
+                <span style="font-size:30px;cursor:pointer;color: white"  onclick="toggleNav()">&#9776;</span>
+                <span class="pull-right Loggedinas" style="padding: 0 0"> Welcome <?php //GetUsername(); ?>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    
                 </span>
 
             </div>
+            -->
             <!--
             <div class="col-sm-12" style="height: 28%">
             </div>
