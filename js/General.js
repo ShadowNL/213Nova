@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     $('.menuitem:not(#addsubject)').click(function () {
-        //console.log($(this).attr('vak'), $(this).attr('sector'));
+        console.log($(this).attr('vak'), $(this).attr('sector'));
         var SectorID = $(this).attr('sector');
         var VakID = $(this).attr('vak');
         var page = 'index.php?SectorID=' + SectorID + '&VakID=' + VakID;

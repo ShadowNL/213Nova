@@ -51,8 +51,8 @@ function createNav(){
     if ($result && $result->num_rows > 0) {
         //output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo'<center><div onclick="redirect('.$SectorID.','.$row["VakID"].','.$NavOpen.')" class="MenuItem">'
-             . $row["Vaknaam"] . "</div>";
+            echo'<center><div sector=' . $row["SectorID"] . ' vak=' . $row["VakID"] . ' class="MenuItem">' .
+                $row["Vaknaam"] . "</div></center>";
         }
     } else {
         echo "Geen vakken in deze sector gevonden";
@@ -93,7 +93,6 @@ function generateOpdrachten(){
     <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
 </head>
 <body>
-
 <nav id='navbarblue' class="navbar navbar-custom-blue student-nav-side-fix">
     <div  class='nav navbar-nav pull-left'><li id='navspacer'><p></p></li></div>
     <div class='nav navbar-nav pull-left'>
@@ -111,7 +110,7 @@ function generateOpdrachten(){
 </div>
 
 <div id="main">
-    <div class="container-fluid opdrachten-view">
+    <div id="content" class="container-fluid opdrachten-view">
         <?php
         if (isset($_GET['VakID'])) {
             generateOpdrachten();
@@ -125,7 +124,10 @@ function generateOpdrachten(){
 </body>
 </html>
 <!-- alle java scripts HIER aub dankuwel ;)-->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
+<scrip src="http://code.jquery.com/jquery-1.7.1.min.js"></scrip>
+<script src="js/General.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
     // 0 = dicht, 1 = open
