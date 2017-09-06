@@ -3,13 +3,12 @@ include "DatabaseConnection.php";
 session_start();
 
 $VakID = $_POST['vak'];
+$OpdrachtID = 0;
 $titel = $_POST['titel'];
 $omschrijving = $_POST['omschrijving'];
 $downloadlink = $_POST['downloadlink'];
 $verantwoordelijke = $_SESSION['username'];
 
-echo $VakID, $titel, $omschrijving, $downloadlink, $verantwoordelijke;
+$sqlAddSubject = "INSERT INTO `opdrachten`(`VakID`, `Titel`,`Omschrijving`, `Downloadlink`,`Verantwoordelijke`) VALUES ('$VakID','$titel','$omschrijving','$downloadlink','$verantwoordelijke')";
 
-//$sqlAddSubject = "INSERT INTO `vakken`(`SectorID`, `Vaknaam`) VALUES ($SectorID,'$Vaknaam')";
-
-//$result = $conStr->query($sqlAddSubject);
+$result = $conStr->query($sqlAddSubject);
