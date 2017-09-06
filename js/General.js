@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //initial
-    $('#content').load('index.php');
+    
 
     // $('#addsubject a').click(function () {
     //     var page = $(this).attr('href');
@@ -14,6 +14,7 @@ $(document).ready(function () {
         var VakID = $(this).attr('vak');
         var page = 'index.php?SectorID=' + SectorID + '&VakID=' + VakID;
         $('#content').load(page);
+        window.history.replaceState(null, null, '2_Sectorhome.php?SectorID=' + SectorID + '&VakID=' + VakID + window.location.hash);
     });
     
     $('#btn-logout').click(function() {

@@ -15,6 +15,9 @@ if (isset($_GET['SectorID'])) {
 if (isset($_GET['VakID'])) {
     $VakID = $_GET['VakID'];
 }
+if (isset($_GET['navOpen'])) {
+    $NavOpen = $_GET['navOpen'];
+}
 
 function GetUsername()
 {
@@ -143,13 +146,7 @@ function generateOpdrachten()
 
 <div id="main">
     <div id="content" class="container-fluid opdrachten-view">
-        <?php
-        if (isset($_GET['VakID'])) {
-            generateOpdrachten();
-        } else {
-            generateHelp();
-        }
-        ?>
+        
     </div>
 </div>
 
@@ -168,32 +165,50 @@ function generateOpdrachten()
 </html>
 <!-- alle java scripts HIER aub dankuwel ;)-->
 <script>
-    // 0 = dicht, 1 = open
     var navOpen = false;
+    var navbar = document.getElementById("navspacer");
+    var sidenav = document.getElementById("mySidenav");
+    var main = document.getElementById("main");
+
+    if (navOpen = window.location.hash.substr(1) == "nav-open"){
+        openNav();
+    }
+
+    <?php
+        echo '$("#content").load("index.php?SectorID='.$SectorID.'&VakID='.$VakID.'");';
+    ?>
+    // 0 = dicht, 1 = open
+
     function getInnerWidth(elem) {
         return parseFloat(window.getComputedStyle(elem).width);
     }
 
-    function toggleNav() {
-        var navbar = document.getElementById("navspacer");
-        var sidenav = document.getElementById("mySidenav");
-        var main = document.getElementById("main");
-        if (navOpen) {
-            //close navbar
-            sidenav.style.width = "0";
-            main.style.marginLeft = "0";
-            navbar.style.width = "0";
-        } else {
-            //open navbar
-            sidenav.style.width = "250px";
-            main.style.marginLeft = "250px";
-            navbar.style.width = "250px";
-        }
-        navOpen = !navOpen;
+    function openNav() {
+        sidenav.style.width = "250px";
+        main.style.marginLeft = "250px";
+        navbar.style.width = "250px";
+        window.location.hash = "nav-open";
+        navOpen = true;
     }
 
-    function redirect(id, id2, open) {
-        window.location.href = "2_Sectorhome.php?SectorID=" + id + "&VakID=" + id2 + "&NavOpen=" + open;
+    function closeNav() {
+        sidenav.style.width = "0";
+        main.style.marginLeft = "0";
+        navbar.style.width = "0";
+        window.location.hash = "nav-closed";
+        navOpen = false;
+    }
+
+    function toggleNav() {
+        if (!navOpen) {
+            openNav();
+        } else {
+            closeNav();
+        }
+    }
+
+    function redirect(id, id2) {
+        window.location.href = "2_Sectorhome.php?SectorID=" + id + "&VakID=" + id2;
     }
 </script>
 
