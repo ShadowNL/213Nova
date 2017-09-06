@@ -95,6 +95,7 @@ function generateOpdrachten()
                             </div>
                         </div>  ";
         }
+
     } else {
         echo "Geen opdrachten in dit vak gevonden";
     }
@@ -162,6 +163,7 @@ function generateOpdrachten()
         crossorigin="anonymous"></script>
 <?php include 'AdminLoginModal.html'; ?>
 <?php include 'AdminAddVakModal.php'; ?>
+<?php include 'AdminAddOpdrachtModal.php'; ?>
 </body>
 </html>
 <!-- alle java scripts HIER aub dankuwel ;)-->
