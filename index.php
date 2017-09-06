@@ -19,10 +19,31 @@ global $SectorID;
 global $VakID;
 $sqlNav = "SELECT * FROM opdrachten WHERE VakID =" . $VakID;
 $result = $conStr->query($sqlNav);
+
+$link = $_SERVER['PHP_SELF'];
+$link_array = explode('/', $link);
+$urlpart = end($link_array);
 if ($result && $result->num_rows > 0) {
     //output data of each row
+    echo '<div class="opdrachten-label" style="height: 30px;">
+ <div type="button" class="opdrachten-label-header" data-toggle="modal" data-target="#AdminAddOpdrachtModal" style="text-align: center; line-height: 20px;">
+ <a href="#" class="btn-addopdracht">triggert</a>
+ </div>
+</div>';
+
     while ($row = $result->fetch_assoc()) {
-        if (isset($_SESSION["username"])) {
+        echo "<div class='opdrachten-label'>
+                    <div class='opdrachten-label-header'><b>" . $row["Titel"] . "</b>
+                        <div type=\"button\" class=\"nav navbar-nav pull-right\" data-toggle=\"modal\" data-target=\"#adminLoginModal\"><li><a href=\"#\">Edit</a></li></div></div>
+                        <div class='opdrachten-label-textbox'>" . $row["Omschrijving"] . "</div>
+                        <div class='opdrachten-label-teacher'> leraar: " . $row["Verantwoordelijke"] .
+            "<div class='opdrachten-label-download-btn'>
+                        <a href=" . $row["Downloadlink"] . " download>download</a>
+                     </div>
+                </div>
+            </div>  ";
+
+        if ($urlpart === "4_adminoverview.php") {
             echo "<center>
                     <table>
                         <tr>
@@ -43,15 +64,7 @@ if ($result && $result->num_rows > 0) {
                     </table>       
                  </center>";
         } else {
-            echo "<div class='opdrachten-label'>
-                    <div class='opdrachten-label-header'><b>" . $row["Titel"] . "</b></div>
-                        <div class='opdrachten-label-textbox'>" . $row["Omschrijving"] . "</div>
-                        <div class='opdrachten-label-teacher'> leraar: " . $row["Verantwoordelijke"] .
-                            "<div class='opdrachten-label-download-btn'>
-                                <a href=" . $row["Downloadlink"] . " download>download</a>
-                             </div>
-                        </div>
-                    </div>  ";
+
         }
     }
 } else {

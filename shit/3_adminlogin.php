@@ -29,7 +29,7 @@ function Geterror()
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
+        <link rel="stylesheet" type="text/css" href="../offcanvas.css"/>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -53,7 +53,7 @@ function Geterror()
                     <!--Login-->
                     <div class="panel-body" style="height: 65%; background-color: #ffedbf ">
                         <div style="min-width:100px; width:50%; position:absolute; top:50%; left:50%; transform:translateX(-50%) translateY(-50%);">
-                            <form action="redirect.php" method="post">
+                            <form action="../redirect.php" method="post">
                                 <input type="text" name="user" placeholder="Gebruikersnaam" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
                                 <input type="password" name="pass" placeholder="Wachtwoord" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
                                 <label style="color:red;"><?php Geterror(); ?></label>
@@ -66,7 +66,7 @@ function Geterror()
                         <button class="pull-right button-admin-login" type="submit">Login</button>
                         </form>
                         <!--Back to landingpage-->
-                        <a href="1_Landingpage.php" style="color: black">
+                        <a href="../1_Landingpage.php" style="color: black">
                             <button class="pull_left button-admin-login" type="submit">Terug naar Sectoren</button>
                         </a>
                         
