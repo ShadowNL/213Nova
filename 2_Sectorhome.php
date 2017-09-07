@@ -112,10 +112,11 @@ function generateOpdrachten()
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
+    <link rel="stylesheet" type="text/css" id="student-styles" href="css/student.css"/>
+    <link rel="stylesheet" type="text/css" id="admin-styles" href="css/admin.css" disabled="true"/>
 </head>
 <body>
-<nav id='navbarblue' class="navbar navbar-custom-blue student-nav-side-fix">
+<nav id='navbarblue' class="navbar navbar-custom-213 student-nav-side-fix">
     <div class='nav navbar-nav pull-left'>
         <li id='navspacer'><p></p></li>
     </div>
@@ -162,6 +163,25 @@ function generateOpdrachten()
 </html>
 <!-- alle java scripts HIER aub dankuwel ;)-->
 <script>
+    //START of CSS file switcher
+    <?php 
+    //initialise loggedIn variable and give it a value
+    if (isset($_SESSION['username'])){
+        echo 'var loggedIn = true;';
+    } else {
+        echo 'var loggedIn = false;';
+    }
+    ?>
+    function switchStyle(){
+        //disable admin css when not logged in. logged in? dont disable admin css.
+        loggedIn = document.getElementById('admin-styles').disabled = !loggedIn;
+    }
+    if (loggedIn) {
+        //if logged in, enable the admin css. Essentially updating the css.
+        switchStyle();
+    }
+    //END of CSS file switcher
+    
     var navOpen = false;
     var navbar = document.getElementById("navspacer");
     var sidenav = document.getElementById("mySidenav");

@@ -22,12 +22,13 @@ function GetUsername()
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="offcanvas.css"/>
+    <link rel="stylesheet" type="text/css" id="student-styles" href="css/student.css"/>
+    <link rel="stylesheet" type="text/css" id="admin-styles" href="css/admin.css" disabled="true"/>
 
 </head>
 <body>
-<nav class="navbar navbar-custom-blue navbar-fixed-top">
-    <div class="navbar-custom-blue-brand">ICT Academie 213Server</div>
+<nav class="navbar navbar-custom-213 navbar-fixed-top">
+    <div class="navbar-custom-213-brand">ICT Academie 213Server</div>
     <div class='nav navbar-nav pull-right'>
         <?php GetUsername(); ?>
     </div>
@@ -91,6 +92,25 @@ function GetUsername()
 </body>
 </html>
 <script>
+    //START of CSS file switcher
+    <?php 
+    //initialise loggedIn variable and give it a value
+    if (isset($_SESSION['username'])){
+        echo 'var loggedIn = true;';
+    } else {
+        echo 'var loggedIn = false;';
+    }
+    ?>
+    function switchStyle(){
+        //disable admin css when not logged in. logged in? dont disable admin css.
+        loggedIn = document.getElementById('admin-styles').disabled = !loggedIn;
+    }
+    if (loggedIn) {
+        //if logged in, enable the admin css. Essentially updating the css.
+        switchStyle();
+    }
+    //END of CSS file switcher
+    
     function redirect(id) {
         window.location.href = "2_Sectorhome.php?SectorID=" + id + "&VakID=0#nav-open";
     }
