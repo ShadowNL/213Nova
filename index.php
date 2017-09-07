@@ -33,16 +33,18 @@ if ($result && $result->num_rows > 0) {
     }
 
     while ($row = $result->fetch_assoc()) {
-        echo "<div class='opdrachten-label'>
-                    <div class='opdrachten-label-header'><b>" . $row["Titel"] . "</b>
-                        <div type=\"button\" class=\"nav navbar-nav pull-right\" data-toggle=\"modal\" data-target=\"#adminLoginModal\"><li><a href=\"#\">Edit</a></li></div></div>
-                        <div class='opdrachten-label-textbox'>" . $row["Omschrijving"] . "</div>
-                        <div class='opdrachten-label-teacher'> leraar: " . $row["Verantwoordelijke"] .
-            "<div class='opdrachten-label-download-btn'>
-                        <a href=" . $row["Downloadlink"] . " download>download</a>
-                     </div>
-                </div>
-            </div>  ";
+        echo    "<div class='opdrachten-label'>
+                    <div class='opdrachten-label-header'><b>" . $row["Titel"] . "</b></div>
+                    <div class='opdrachten-label-textbox'>" . $row["Omschrijving"] . "</div>
+                    <div class='opdrachten-label-teacher'> leraar: " . $row["Verantwoordelijke"] .
+                        "<div class='opdrachten-label-download-btn'>
+                            <a href=" . $row["Downloadlink"] . " download>download</a>
+                        </div>
+                        <div class='opdrachten-label-download-btn' data-toggle=\"modal\" data-target=\"#adminLoginModal\">
+                            <a href=\"#\">Edit</a>
+                        </div>
+                    </div>
+                </div>  ";
     }
 } else {
     if ($VakID != 0) {

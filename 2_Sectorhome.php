@@ -123,9 +123,6 @@ function generateOpdrachten()
     <div class='nav navbar-nav pull-left'>
         <li><a style='font-size:30px;cursor:pointer;color: white' onclick="toggleNav()">&#9776;</a></li>
     </div>
-<!--    <div class='nav navbar-nav pull-left'>-->
-<!--        <li><a href='1_Landingpage.php'>Naar Sectoroverzicht</a></li>-->
-<!--    </div>-->
     <?php GetUsername(); ?>
 </nav>
 <div style="height:50px;"></div>
