@@ -60,11 +60,13 @@ a.imglink:hover img{
 
 /*Landing page css*/
 .landing-button-panel{
-    min-width: 200px;
+    width: 20vw;
+    height: 16vw;
+/*    min-width: 200px;
     max-width: 400px;
     min-height: 180px;
     max-height: 400px;
-    height: 32%;
+    height: 32%;*/
     background-color: #8da9fc;
     border-radius:0;
     cursor:pointer;
