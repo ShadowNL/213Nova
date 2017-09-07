@@ -1,27 +1,29 @@
 <!-- Modal -->
 <div id="adminLoginModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="min-height:150px; height:20vw; min-width:400px; border:none !important; padding:0; border-radius:0;">
 
         <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="panel-heading-custom" style="background-color:#ffae63; min-height:25px; height:15%;">
-                    <div style="color:white; text-align:center; font-weight: bold; font-size:32px;">
-                        Inloggen als Docent
-                    </div>
+        <!--div class="panel panel-default" -->
+            <div class="panel-heading-custom" style="background-color:#FF9900; min-height: 25px; height:4vw;">
+                <div style="color:white; text-align:center; font-weight: bold; font-size:32px;">
+                    Inloggen als Docent
                 </div>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body">
-                <form id="loginForm" action="redirect.php" method="post">
-                <input type="text" name="user" placeholder="Gebruikersnaam" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
-                <input type="password" name="pass" placeholder="Wachtwoord" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button id="loginSubmit" class="pull-right btn btn-default" type="submit">Login</button>
-                </form>
+            <!--button type="button" class="close" data-dismiss="modal">&times;</button-->
+            <div class="panel-body" style="height: 13vw; background-color: #ffedbf;">
+                <div style="min-width:100px; min-width:150px; width:50%; position:absolute; top:50%; left:50%; transform:translateX(-50%) translateY(-50%);">
+                    <form id="loginForm" action="redirect.php" method="post">
+                    <input type="text" name="user" placeholder="Gebruikersnaam" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
+                    <input type="password" name="pass" placeholder="Wachtwoord" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
+                    <!--GETERROR MOET HIER-->
+                    <!--FORM WORD NIET GESLOTEN-->
+                </div>
             </div>
-        </div>
-
+            <div class="panel-footer" style="background-color: #FF9900; padding:0; margin:0; height:3vw;">
+                <button id="loginSubmit" class="pull-right button-admin-login" type="submit">Login</button>
+                <button type="button" class="pull_left button-admin-login" data-dismiss="modal">Close</button>
+            </div>
+       
     </div>
 </div>
 <script>

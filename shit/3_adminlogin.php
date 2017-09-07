@@ -51,7 +51,7 @@ function Geterror()
                         </div>
                     </div>
                     <!--Login-->
-                    <div class="panel-body" style="height: 65%; background-color: #ffedbf ">
+                    <div class="panel-body" style="height: 65%; background-color: #ffedbf;">
                         <div style="min-width:100px; width:50%; position:absolute; top:50%; left:50%; transform:translateX(-50%) translateY(-50%);">
                             <form action="../redirect.php" method="post">
                                 <input type="text" name="user" placeholder="Gebruikersnaam" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>

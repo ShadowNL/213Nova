@@ -261,13 +261,13 @@ a.imglink:hover img{
     text-decoration: none;
     outline: none;
     border: none;
-    background-color: #ffae63;
+    background-color: #FF9900;
     color: #fff;
     font-size:18px;
     font-weight: bold;
 }
 .button-admin-login:hover {
-    background-color: #3e8e41
+    background-color: #FFCC66;
 }
 .button-delete-admin {
     display: inline-block;
