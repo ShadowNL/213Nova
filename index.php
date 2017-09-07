@@ -49,7 +49,7 @@ if ($result && $result->num_rows > 0) {
         echo "Geen opdrachten in dit vak gevonden";
         if (isset($_SESSION['username'])) {
             echo '<div class="opdrachten-label" style="height: 30px;">
- <div id="addOpdrachtBtn" type="button" class="opdrachten-label-header" data-toggle="modal" data-target="#AdminAddOpdrachtModal" VakID="' . $VakID . '" style="text-align: center; line-height: 20px;">
+ <div id="addOpdrachtBtn" type="button" class="opdrachten-label-header" data-toggle="modal" data-target="#AdminAddOpdrachtModal" VakID="'.$VakID.'" style="text-align: center; line-height: 20px;">
  <a href="#" class="btn-addopdracht">triggert</a>
  </div>
 </div>';

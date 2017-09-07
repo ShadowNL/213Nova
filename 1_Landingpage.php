@@ -92,7 +92,7 @@ function GetUsername()
 </html>
 <script>
     function redirect(id) {
-        window.location.href = "2_Sectorhome.php?SectorID=" + id;
+        window.location.href = "2_Sectorhome.php?SectorID=" + id + "&VakID=0#nav-open";
     }
     function toPage(id) {
         switch (id) {

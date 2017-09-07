@@ -3,10 +3,7 @@ session_start();
 include "Seasoncheck.php";
 //check if Sector ID is giving with the selection.....yes this is hardcoded hehe
 //check if Sector ID is equal to 1 , 2 or 3 if not redirect to starting page
-if (!isset($_GET['SectorID']) || !in_array($_GET['SectorID'], [1, 2, 3])) {
-    echo "<script>window.location.href='/';</script>";
-    die();
-}
+
 include 'DatabaseConnection.php';
 
 if (isset($_GET['SectorID'])) {
