@@ -22,6 +22,7 @@ function GetUsername()
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" id="common-styles" href="css/common.css"/>
     <link rel="stylesheet" type="text/css" id="student-styles" href="css/student.css"/>
     <link rel="stylesheet" type="text/css" id="admin-styles" href="css/admin.css" disabled="true"/>
 
