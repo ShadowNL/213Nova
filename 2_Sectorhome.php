@@ -224,10 +224,3 @@ echo '$("#content").load("index.php?SectorID=' . $SectorID . '&VakID=' . $VakID 
 
                      
 </script>
-
-
-
-
-
-
-
