@@ -220,6 +220,71 @@ a.imglink:hover img{
     box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
 }
 
+/*Admin login*/
+.button-admin-login {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    height:3vw;
+    width: 30%;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: #FF9900;
+    color: #fff;
+    font-size:18px;
+    font-weight: bold;
+}
+.button-admin-login:hover {
+    background-color: #FFCC66;
+}
+.modal-admin-login{
+    min-height:150px; 
+    height:20vw; 
+    min-width:400px; 
+    border:none !important; 
+    padding:0; 
+    border-radius:0;
+}
+.header-admin-login{
+    background-color:#FF9900; 
+    min-height: 25px; 
+    height:4vw;
+}
+.headertext-admin-login{
+    color:white; 
+    text-align:center; 
+    font-weight: bold; 
+    font-size:32px;
+}
+.body-admin-login{
+    height: 13vw; 
+    background-color: #ffedbf;
+}
+.footer-admin-login{
+    background-color: #FF9900; 
+    padding:0;
+    margin:0;
+    height:3vw;
+}
+.form-admin-login{
+    min-width:100px; 
+    min-width:150px; 
+    width:50%; 
+    position:absolute; 
+    top:50%; 
+    left:50%; 
+    transform:translateX(-50%) translateY(-50%);
+}
+.input-admin-login{
+    min-width:150px;
+    width:100%;
+    font-size:1.5em;
+    font-size:1.5vw
+}
+
 /*Admin label and button css*/
 .opdrachten-label-admin{
     width: 250px;
@@ -249,25 +314,6 @@ a.imglink:hover img{
 .button-admin:active {
     background-color: #3e8e41;
     transform: translateY(4px);
-}
-.button-admin-login {
-    display: inline-block;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 30%;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    border: none;
-    background-color: #FF9900;
-    color: #fff;
-    font-size:18px;
-    font-weight: bold;
-}
-.button-admin-login:hover {
-    background-color: #FFCC66;
 }
 .button-delete-admin {
     display: inline-block;
@@ -331,10 +377,9 @@ a.imglink:hover img{
 .navbar-custom-213 .icon-bar {
     background-color:#33aa33;
 }
-<<<<<<< HEAD
 .navbar-custom-213 .icon-bar {
     background-color:#33aa33;
-=======
+}
 .btn-addopdracht{
     width: 100%;
     height: 20px;
@@ -343,5 +388,4 @@ a.imglink:hover img{
 }
 .btn-addopdracht:hover{
     background-color: red;
->>>>>>> SPA
 }
