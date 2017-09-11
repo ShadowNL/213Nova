@@ -34,6 +34,17 @@ if ($result && $result->num_rows > 0) {
                 </div>';
     }
     //Genereer html voor alle opdrachten in het huidige vak
+
+//
+//    //admin add vak
+//    if (isset($_SESSION['username'])) {
+//        echo '<div class="opdrachten-label" style="height: 30px;">
+// <div id="addOpdrachtBtn" type="button" class="opdrachten-label-header" data-toggle="modal" data-target="#AdminAddOpdrachtModal" VakID="'.$VakID.'" style="text-align: center; line-height: 20px;">
+// <a href="#" class="btn-addopdracht">triggert</a>
+// </div>
+//</div>';
+//}
+
     while ($row = $result->fetch_assoc()) {
         echo "<div class='opdrachten-label'>
                     <div class='opdrachten-label-header'><b>" . $row["Titel"] . "</b></div>
