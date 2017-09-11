@@ -1,6 +1,8 @@
+var lastClickedEditVak;
+var LastClickedEditSector;
+
 $(document).ready(function () {
     //initial
-    
 
     // $('#addsubject a').click(function () {
     //     var page = $(this).attr('href');
@@ -12,11 +14,13 @@ $(document).ready(function () {
         console.log($(this).attr('vak'), $(this).attr('sector'));
         var SectorID = $(this).attr('sector');
         var VakID = $(this).attr('vak');
+        lastClickedEditVak = $(this).attr('vak');
+        LastClickedEditSector = $(this).attr('sector');
         var page = 'index.php?SectorID=' + SectorID + '&VakID=' + VakID;
         $('#content').load(page);
         window.history.replaceState(null, null, '2_Sectorhome.php?SectorID=' + SectorID + '&VakID=' + VakID + window.location.hash);
     });
-    
+
     $('#btn-logout').click(function() {
         $.ajax({
             type:'POST',

@@ -12,6 +12,7 @@ if (isset($_GET['SectorID'])) {
 if (isset($_GET['VakID'])) {
     $VakID = $_GET['VakID'];
 }
+
 if (isset($_GET['navOpen'])) {
     $NavOpen = $_GET['navOpen'];
 }
@@ -69,37 +70,23 @@ function createNav()
     if ($result && $result->num_rows > 0) {
         //output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo '<center><div sector=' . $row["SectorID"] . ' vak=' . $row["VakID"] . ' class="MenuItem">' .
-                $row["Vaknaam"] . "</div></center>";
+            if (isset($_SESSION['username'])) {
+                echo '<center><div sector=' . $row["SectorID"] . ' vak=' . $row["VakID"] . ' class="MenuItem">' . $row["Vaknaam"] .
+                    "<div id='Editvak-Btn' sector=".$row['SectorID']." vak=".$row['VakID']." naam=".$row['Vaknaam']." type=\"button\" data-toggle=\"modal\" data-target=\"#AdminEditVakModal\" style='display:inline; float:right; width:30px; height:25px; cursor: pointer;' >
+                    <p class=\"edit-subject\" href=\"#\">edit</p>
+                    </div>
+                </div></center>";
+            }else{
+                echo '<center><div sector=' . $row["SectorID"] . ' vak=' . $row["VakID"] . ' class="MenuItem">' .
+                $row["Vaknaam"] . "
+                 </div></center>";
+            }
         }
     } else {
         echo "Geen vakken in deze sector gevonden";
     }
 }
 
-function generateOpdrachten()
-{
-    global $conStr;
-    global $VakID;
-    $sqlNav = "SELECT * FROM opdrachten WHERE VakID =" . $VakID;
-    $result = $conStr->query($sqlNav);
-    if ($result && $result->num_rows > 0) { //output data of each row
-        while ($row = $result->fetch_assoc()) {
-            echo "  <div class='opdrachten-label'>
-                            <div class='opdrachten-label-header'><b>" . $row["Titel"] . "</b></div>
-                            <div class='opdrachten-label-textbox'>" . $row["Omschrijving"] . "</div>
-                            <div class='opdrachten-label-teacher'> leraar: " . $row["Verantwoordelijke"] .
-                "<div class='opdrachten-label-download-btn'>
-                                    <a href=" . $row["Downloadlink"] . " download>download</a>
-                                </div>
-                            </div>
-                        </div>  ";
-        }
-
-    } else {
-        echo "Geen opdrachten in dit vak gevonden";
-    }
-}
 
 ?>
 <html>
@@ -123,9 +110,9 @@ function generateOpdrachten()
     <div class='nav navbar-nav pull-left'>
         <li><a style='font-size:30px;cursor:pointer;color: white' onclick="toggleNav()">&#9776;</a></li>
     </div>
-<!--    <div class='nav navbar-nav pull-left'>-->
-<!--        <li><a href='1_Landingpage.php'>Naar Sectoroverzicht</a></li>-->
-<!--    </div>-->
+    <!--    <div class='nav navbar-nav pull-left'>-->
+    <!--        <li><a href='1_Landingpage.php'>Naar Sectoroverzicht</a></li>-->
+    <!--    </div>-->
     <?php GetUsername(); ?>
 </nav>
 <div style="height:50px;"></div>
@@ -135,16 +122,15 @@ function generateOpdrachten()
         <img class="Logo" src=<?php chooseLogo(); ?> style="width:100%;">
     </a>
     <?php
-        createNav();
-        if (isset($_SESSION['username'])) {
-            echo '<center><div id="addsubject" class="MenuItem" data-toggle="modal" data-target="#addVakModal">Vak toevoegen</div></center>';
-        }
+    createNav();
+    if (isset($_SESSION['username'])) {
+        echo '<center><div id="addsubject" class="MenuItem" data-toggle="modal" data-target="#addVakModal">Vak toevoegen</div></center>';
+    }
     ?>
 </div>
 
 <div id="main">
     <div id="content" class="container-fluid opdrachten-view">
-        
     </div>
 </div>
 
@@ -159,20 +145,21 @@ function generateOpdrachten()
 <?php include 'AdminLoginModal.html'; ?>
 <?php include 'AdminAddVakModal.php'; ?>
 <?php include 'AdminAddOpdrachtModal.php'; ?>
+<?php include 'AdminEditVakModal.php'; ?>
 </body>
 </html>
 <!-- alle java scripts HIER aub dankuwel ;)-->
 <script>
     //START of CSS file switcher
-    <?php 
+    <?php
     //initialise loggedIn variable and give it a value
-    if (isset($_SESSION['username'])){
+    if (isset($_SESSION['username'])) {
         echo 'var loggedIn = true;';
     } else {
         echo 'var loggedIn = false;';
     }
     ?>
-    function switchStyle(){
+    function switchStyle() {
         //disable admin css when not logged in. logged in? dont disable admin css.
         loggedIn = document.getElementById('admin-styles').disabled = !loggedIn;
     }
@@ -181,18 +168,18 @@ function generateOpdrachten()
         switchStyle();
     }
     //END of CSS file switcher
-    
+
     var navOpen = false;
     var navbar = document.getElementById("navspacer");
     var sidenav = document.getElementById("mySidenav");
     var main = document.getElementById("main");
 
-    if (navOpen = window.location.hash.substr(1) == "nav-open"){
+    if (navOpen = window.location.hash.substr(1) == "nav-open") {
         openNav();
     }
 
     <?php
-        echo '$("#content").load("index.php?SectorID='.$SectorID.'&VakID='.$VakID.'");';
+    echo '$("#content").load("index.php?SectorID=' . $SectorID . '&VakID=' . $VakID . '");';
     ?>
     // 0 = dicht, 1 = open
 

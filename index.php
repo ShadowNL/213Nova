@@ -30,7 +30,7 @@ if ($result && $result->num_rows > 0) {
  <a href="#" class="btn-addopdracht">triggert</a>
  </div>
 </div>';
-    }
+}
 
     while ($row = $result->fetch_assoc()) {
         echo "<div class='opdrachten-label'>

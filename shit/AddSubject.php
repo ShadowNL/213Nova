@@ -8,7 +8,7 @@
     <div class="" style="margin: 0px; width: auto; height: auto;">
         <h2 style='margin:0;'>Vak Toevoegen</h2>
         </br>
-        <form method='post' action='AddSubjectSQL.php'>
+        <form method='post' action='../AddSubjectSQL.php'>
             <table style="border-color: transparent">
                 <tr>
                     <td>Select sector:</td>
