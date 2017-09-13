@@ -1,7 +1,4 @@
 <!-- Modal -->
-<?php
-
-?>
 <div id="AdminAddOpdrachtModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
