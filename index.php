@@ -24,9 +24,9 @@ if ($result && $result->num_rows > 0) {
     if ($userSetSession) {
         //Produceer AddOpdracht-knop
         echo    '<div class="opdrachten-label" style="height: 30px;">
-                    <div id="addOpdrachtBtn" type="button" class="opdrachten-label-header" data-toggle="modal" 
-                     data-target="#AdminAddOpdrachtModal" VakID="' . $VakID . '" style="text-align: center; line-height: 20px;">
-                        <a href="#" class="btn-addopdracht">triggert</a>
+                    <div id="addOpdrachtBtn" type="button" class="btn-addopdracht" data-toggle="modal" 
+                     data-target="#AdminAddOpdrachtModal" VakID="' . $VakID . '">
+                        Nieuwe Opdracht
                     </div>
                 </div>';
     }
