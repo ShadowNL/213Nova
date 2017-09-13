@@ -41,7 +41,7 @@ if ($result && $result->num_rows > 0) {
                         </div>";
         //Als user ingelogd is, laat EDIT knop zien
         if ($userSetSession) {
-            echo        "<div class='opdrachten-label-download-btn' data-toggle=\"modal\" data-target=\"#adminLoginModal\">
+            echo        "<div class='opdrachten-label-download-btn' data-toggle=\"modal\" data-target=\"#adminEditModal\">
                             <a href=\"#\">Edit</a>
                         </div>";
         }

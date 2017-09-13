@@ -158,10 +158,14 @@ function generateOpdrachten() {
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-        <?php include 'AdminLoginModal.html'; ?>
-        <?php include 'AdminAddVakModal.php'; ?>
-        <?php include 'AdminAddOpdrachtModal.php'; ?>
-        <?php include 'AdminEditVakModal.php'; ?>
+        <?php
+        include 'AdminLoginModal.html';
+        include 'AdminAddVakModal.php';
+        include 'AdminAddOpdrachtModal.php';
+        include 'AdminEditVakModal.php';
+        include 'AdminEditOpdrachtModal.html';
+        ?>
+
     </body>
 </html>
 <!-- alle java scripts HIER aub dankuwel ;)-->
