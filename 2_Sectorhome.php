@@ -161,6 +161,7 @@ function generateOpdrachten() {
         <?php include 'AdminLoginModal.html'; ?>
         <?php include 'AdminAddVakModal.php'; ?>
         <?php include 'AdminAddOpdrachtModal.php'; ?>
+        <?php include 'AdminEditVakModal.php'; ?>
     </body>
 </html>
 <!-- alle java scripts HIER aub dankuwel ;)-->

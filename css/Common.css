@@ -336,6 +336,20 @@ a.imglink:hover img{
     background-color: #bf3131;
     transform: translateY(4px);
 }
+/*admin opdrachtenoverzicht addopdrachtknop*/
+.button-addopdracht{
+    display: block;
+    width: 80%;
+    height: 120px;
+    //margin: 20px auto;
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.49);
+    background-color:#FF9900;
+}
+.button-addopdracht:hover{
+    background-color:#FFCC66;
+}
 
 /*blue custom navbar*/
 .navbar-custom-213 {
@@ -381,11 +395,20 @@ a.imglink:hover img{
     background-color:#33aa33;
 }
 .btn-addopdracht{
-    width: 100%;
-    height: 20px;
     display: block;
-    background-color: #C6E2FF;
+    width: 100%;
+    height: 100%;
+    padding:0; 
+    margin:0;
+    background-color: #FF9900;
+    color:#FFF;
+    font-weight:bold;
+    font-size:18px;
+    text-align: center; 
+    line-height: 30px; 
+    cursor:pointer;
 }
 .btn-addopdracht:hover{
-    background-color: red;
+    background-color: #FFCC66;
+    //border: solid 1px #FF9900;
 }
