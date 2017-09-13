@@ -13,7 +13,6 @@ if (isset($_GET['VakID'])) {
 global $conStr;
 global $SectorID;
 global $VakID;
-
 $sqlNav = "SELECT * FROM opdrachten WHERE VakID = " . $VakID;
 $result = $conStr->query($sqlNav);
 
@@ -27,6 +26,7 @@ if ($result && $result->num_rows > 0) {
                     <div id="addOpdrachtBtn" type="button" class="opdrachten-label-header" data-toggle="modal" 
                      data-target="#AdminAddOpdrachtModal" VakID="' . $VakID . '" style="text-align: center; line-height: 20px;">
                         <a href="#" class="btn-addopdracht">triggert</a>
+                        
                     </div>
                 </div>';
     }
