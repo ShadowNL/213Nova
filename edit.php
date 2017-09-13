@@ -1,4 +1,5 @@
 <?php
+
 include 'DatabaseConnection.php';
 
 // fetch SQL information
@@ -10,15 +11,16 @@ if(isset($_GET['VakID']))
     $res=  mysqli_query($conStr, $sql);
     $row= mysqli_fetch_array($res);
 }
+
 ?>
 
 <!-- Forms -->
 <form action="." id="updateform" method="POST">
-    VakID: <input type="text" name="newVakID" value="<?php echo $row['VakID'];?>"> <br>
-    OpdrachtID: <input type="text" name="newOpdrachtID" value="<?php echo $row['OpdrachtID'];?>"> <br>
-    Titel: <input type="text" name="newTitel" value="<?php echo $row['Titel'];?>"> <br>
-    Downloadlink: <input type="text" name="newDownloadlink" value="<?php echo $row['Downloadlink'];?>"> <br>
-    Omschrijving: <input type="text" name="newOmschrijving" value="<?php echo $row['Omschrijving'];?>"> <br>
+    VakID: <input type="text" id="VakID" name="VakID" value="<?php echo $row['VakID'];?>"> <br>
+    OpdrachtID: <input type="text" id="OpdrachtID" name="OpdrachtID" value="<?php echo $row['OpdrachtID'];?>"> <br>
+    Titel: <input type="text" id="newTitel" name="newTitel" value="<?php echo $row['Titel'];?>"> <br>
+    Downloadlink: <input type="text" id="newDownloadlink" name="newDownloadlink" value="<?php echo $row['Downloadlink'];?>"> <br>
+    Omschrijving: <input type="text" id="newOmschrijving" name="newOmschrijving" value="<?php echo $row['Omschrijving'];?>"> <br>
     <button id="SubmitEditOpdracht" type="Submit" value="Update">Update</button>
 </form>
 
@@ -33,20 +35,25 @@ if(isset($_GET['VakID']))
 <script>
     $("#SubmitEditOpdracht").click(function(e) {
         e.preventDefault();
+        console.log($('#VakID').val(),
+             $('#OpdrachtID').val(),
+             $('#newTitel').val(),
+             $('#newDownloadlink').val(),
+             $('#newOmschrijving').val(),)
             $.ajax({
                     type: 'POST',
                     url: 'edit_update.php',
                     data: {
-                        VakID: $('#updateform').children('[name="newVakID"]').val(),
-                        OpdrachtID: $('#updateform').children('[name="newOpdrachtID"]').val(),,
-                        Titel: $('#updateform').children('[name="newTitel"]').val(),
-                        Downloadlink: $('#updateform').children('[name="newDownloadlink"]').val(),
-                        Omschrijving: $('#updateform').children('[name="newOmschrijving"]').val()},
+                        VakID: $('#VakID').val(),
+                        OpdrachtID: $('#OpdrachtID').val(),
+                        Titel: $('#newTitel').val(),
+                        Downloadlink: $('#newDownloadlink').val(),
+                        Omschrijving: $('#newOmschrijving').val()},
                         success:function(response){
-                alert($('#updateform').children('[name="newTitel"]').val());
+                // alert($('#updateform').children('[name="VakID"]').val());
                 location.reload();
 
             }
-        });
+        })
     });
 </script>

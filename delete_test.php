@@ -7,7 +7,7 @@ $sql = "SELECT VakID, OpdrachtID, Titel, Omschrijving, Downloadlink FROM opdrach
 
 $result = mysqli_query($conStr,$sql);
 
-// get TH namesi
+// get TH names
 $finfo0 = mysqli_fetch_field_direct($result, 0);
 $finfo1 = mysqli_fetch_field_direct($result, 1);
 $finfo2 = mysqli_fetch_field_direct($result, 2);
