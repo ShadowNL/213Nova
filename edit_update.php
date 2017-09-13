@@ -1,17 +1,25 @@
 <?php
+session_start();
 include 'DatabaseConnection.php';
 
-// update SQL information
-    $vid = $_GET['VakID'];
-    $id = $_GET['OpdrachtID'];
-    echo 'hello';
-    $newTitel = $_POST['newTitel'];
-    $newDownloadlink = $_POST['newDownloadlink'];
-    $newOmschrijving = $_POST['newOmschrijving'];
+ //update SQL information
+$vid = $_POST['VakID'];
+$id = $_POST['OpdrachtID'];
+$newTitel = $_POST['Titel'];
+$newDownloadlink = $_POST['Downloadlink'];
+$newOmschrijving = $_POST['Omschrijving'];
 
-    $sql= "UPDATE opdrachten SET Titel='$newTitel', Downloadlink='$newDownloadlink', Omschrijving='$newOmschrijving'
-    WHERE VakID='$vid' AND OpdrachtID='$id'";
-    $res=  mysqli_query($conStr, $sql);
+$sqlquery= "UPDATE opdrachten SET Titel= '$newTitel', Downloadlink='$newDownloadlink', Omschrijving='$newOmschrijving'
+WHERE VakID=$vid AND OpdrachtID=$id";
+$result = $conStr->query($sqlquery);
 
-    echo "<meta http-equiv='refresh' content='0;url=delete_test.php'>";
+?>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="js/General.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
