@@ -16,6 +16,7 @@
                 <form id="vakEditForm" method="post" action="EditSubjectSQL.php">
                     <input type="text" name="newvaknaam" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-right" data-toggle=\"modal\" data-target=\"#adminDeleteConfirm\">Delete</button>
                     <button name="submitedit" id="editVakSubmit" class="pull-right btn btn-default" type="submit">Save</button>
                 </form>
             </div>
