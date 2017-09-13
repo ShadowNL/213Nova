@@ -13,7 +13,6 @@ if (isset($_GET['VakID'])) {
 global $conStr;
 global $SectorID;
 global $VakID;
-
 $sqlNav = "SELECT * FROM opdrachten WHERE VakID = " . $VakID;
 $result = $conStr->query($sqlNav);
 
