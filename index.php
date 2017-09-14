@@ -27,10 +27,10 @@ function genAddOpdrachtButton($VakID){
 }
 //Produceer "geen opdrachten" bericht
 function genGeenOpdrachtenLabel(){
+    //text-align: center; line-height: 20px;
     echo    '<div class="opdrachten-label" style="height: 30px;">
-                <div class="opdrachten-label-header"   style="text-align: center; line-height: 20px;">
-                    <div class=btn-addopdracht>Geen opdrachten gevonden in dit vak
-                    </div>
+                <div class="btn-addopdracht nohover">
+                    Geen opdrachten gevonden in dit vak
                 </div>
             </div>';
 }

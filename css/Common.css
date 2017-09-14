@@ -409,9 +409,12 @@ a.imglink:hover img{
     font-size:18px;
     text-align: center; 
     line-height: 30px; 
-    cursor:pointer;
 }
 .btn-addopdracht:hover{
     background-color: #FFCC66;
+    cursor:pointer;
     //border: solid 1px #FF9900;
+}
+.nohover{
+    pointer-events: none;
 }
