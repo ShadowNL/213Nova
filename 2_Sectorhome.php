@@ -163,7 +163,7 @@ function generateOpdrachten() {
         include 'AdminAddVakModal.php';
         include 'AdminAddOpdrachtModal.php';
         include 'AdminEditVakModal.php';
-        include 'AdminEditOpdrachtModal.html';
+        include 'AdminEditOpdrachtModal.php';
         ?>
 
     </body>
