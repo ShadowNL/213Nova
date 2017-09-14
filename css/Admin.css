@@ -2,6 +2,10 @@
 .landing-button-panel{
     background-color: #fcc48d;
 }
+/*docentenoverzicht css*/
+.docent-label-header{
+     background-color: #ffe3c7;
+}
 /*student opdrachten label css*/
 .opdrachten-label-header{
     background-color: #ffe3c7;

@@ -157,7 +157,11 @@ a.imglink:hover img{
     width: 100%;
 }
 
-/*Docentoverzicht label css*/
+/*Docenten-overzicht label css*/
+.docent-legend{
+    font-size:30px;
+    color:#A0A0A0;
+}
 .docent-label{
     display: block;
     height: 100px;
@@ -172,7 +176,6 @@ a.imglink:hover img{
     padding-left: 4px;
     width: 100%;
     top:0;
-    background-color: #C6E2FF;
     text-align: left;
 }
 .docent-label-foto{
