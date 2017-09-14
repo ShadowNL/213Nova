@@ -1,4 +1,7 @@
 <!-- Modal -->
+<?php
+
+?>
 <div id="adminEditModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -15,7 +18,7 @@
             </div>
             <div class="modal-body">
                 <form id="EditOpdrachtForm" method="post" action="EditOpdrachtSQL.php">
-                    <input type="text" id="EditOpdrachtTitle" placeholder="Title" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
+                    <input type="text" id="EditOpdrachtTitle" placeholder="Titel" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
                     <input type="text" id="EditOpdrachtOmschrijving" placeholder="Omschrijving" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
                     <input type="text" id="EditOpdrachtDownloadlink" placeholder="Download Link" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
 
