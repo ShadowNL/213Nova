@@ -19,8 +19,8 @@ $userSetSession = isset($_SESSION['username']);
 //Produceer AddOpdracht-knop
 function genAddOpdrachtButton($VakID){
     echo    '<div class="opdrachten-label" style="height: 30px;">
-                <div id="addOpdrachtBtn" type="button" class="btn-addopdracht" data-toggle="modal" 
-                 data-target="#AdminAddOpdrachtModal" VakID="' . $VakID . '">
+                <div id="addOpdrachtBtn" type="button" class="btn-addopdracht"
+                data-toggle="modal" data-target="#AdminAddOpdrachtModal" VakID="' . $VakID . '">
                     Nieuwe Opdracht
                 </div>
             </div>';
@@ -29,17 +29,17 @@ function genAddOpdrachtButton($VakID){
 function genGeenOpdrachtenLabel(){
     //text-align: center; line-height: 20px;
     echo    '<div class="opdrachten-label" style="height: 30px;">
-                <div class="btn-addopdracht nohover">
+                <div class="label-message nohover">
                     Geen opdrachten gevonden in dit vak
                 </div>
             </div>';
 }
 //Produceer Help text
 function genHelpTextLabel(){
-    echo    '<div class="opdrachten-label" style="height: 70px;">
-                <div class="opdrachten-label-header"   style="height: 70px; text-align: center; line-height: 20px;">
-                    <div class=opdrachten-label-header style="text-align: center"><h4>Om opdrachten te kunnen downloaden en of bekijken<br>moet u eerst nog uw vak kiezen</h4>
-                    </div>
+    echo    '<div class="opdrachten-label" style="height: 60px;">
+                <div class="label-message nohover">
+                    Klik in de zwarte zijbalk een vak aan om te beginnen <br>
+                    Als de zijbalk niet wordt weergegeven, klik dan op de knop met 3 witte balkjes linksbovenin
                 </div>
             </div>';
 }

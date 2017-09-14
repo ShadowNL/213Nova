@@ -10,6 +10,18 @@
 .opdrachten-label-header{
     background-color: #C6E2FF;
 }
+/*overzicht bericht en addopdracht label*/
+.btn-addopdracht{
+    background-color: #44A0FF;
+    color:#FFF;
+}
+.btn-addopdracht:hover{
+    background-color:  #A1CFFF;
+}
+.label-message{
+    background-color: #44A0FF;
+    color:#FFF;
+}
 /*213 custom navbar*/
 .navbar-custom-213 {
     background-color:#44A0FF;
