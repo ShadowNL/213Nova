@@ -16,6 +16,7 @@ global $VakID;
 $sqlNav = "SELECT * FROM opdrachten WHERE VakID = " . $VakID;
 $result = $conStr->query($sqlNav);
 $userSetSession = isset($_SESSION['username']);
+
 //Produceer AddOpdracht-knop
 function genAddOpdrachtButton($VakID){
     echo    '<div class="opdrachten-label" style="height: 30px;">
@@ -44,7 +45,7 @@ function genHelpTextLabel(){
             </div>';
 }
 //Produceer opdrachten
-function genOpdrachtLabel($OpdrachtID,$titel,$omschrijving,$verantwoordelijke,$downloadlink,$userSetSession){
+function genOpdrachtLabel($OpdrachtID,$VakID,$titel,$omschrijving,$verantwoordelijke,$downloadlink,$userSetSession){
     echo    "<div class='opdrachten-label'>
                 <div class='opdrachten-label-header'><b>" . $titel . "</b></div>
                 <div class='opdrachten-label-textbox'>" . $omschrijving . "</div>
@@ -54,8 +55,8 @@ function genOpdrachtLabel($OpdrachtID,$titel,$omschrijving,$verantwoordelijke,$d
                     </div>";
     //Als user ingelogd is, laat EDIT knop zien
     if ($userSetSession) {
-        echo        "<div class='opdrachten-label-download-btn' OpdrachtID='" . $OpdrachtID . "' data-toggle=\"modal\" data-target=\"#adminEditModal\">
-                        <a href=\"#\">Edit</a>
+        echo        "<div id='btnEditOpdrachtmodal' class='opdrachten-label-download-btn' VakID='" . $VakID . "' OpdrachtID='" . $OpdrachtID . "' data-toggle=\"modal\" data-target=\"#adminEditModal\">
+                        <a href='#'>Edit</a>
                     </div>";
     }
     echo        "</div>
@@ -71,8 +72,10 @@ if ($result && $result->num_rows > 0) {
     //Genereer html voor alle opdrachten in het huidige vak
     while ($row = $result->fetch_assoc()) {
         //produceer opdracht-labels
-        genOpdrachtLabel($row['OpdrachtID'],$row["Titel"],$row["Omschrijving"],$row["Verantwoordelijke"],$row["Downloadlink"],$userSetSession);
+        genOpdrachtLabel($row['OpdrachtID'], $row['VakID'],$row["Titel"],$row["Omschrijving"],$row["Verantwoordelijke"],$row["Downloadlink"],$userSetSession);
     }
+
+    echo "<script>initEditOpdracht();</script>";
 //Als er geen opdrachten gevonden zijn:
 } else {
     //als er een vak is geselecteerd, geef bericht dat er geen opdrachten zijn

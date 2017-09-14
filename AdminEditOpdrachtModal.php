@@ -1,22 +1,3 @@
-<?php
-include 'DatabaseConnection.php';
-
-// SQL first table summon
-$sql = "SELECT VakID, OpdrachtID, Titel, Omschrijving, Downloadlink FROM opdrachten";
-
-$result = mysqli_query($conStr,$sql);
-
-// get TH names
-$finfo0 = mysqli_fetch_field_direct($result, 0);
-$finfo1 = mysqli_fetch_field_direct($result, 1);
-$finfo2 = mysqli_fetch_field_direct($result, 2);
-$finfo3 = mysqli_fetch_field_direct($result, 3);
-$finfo4 = mysqli_fetch_field_direct($result, 4);
-
-
-?>
-
-
 <!-- Modal -->
 <div id="adminEditModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -33,43 +14,16 @@ $finfo4 = mysqli_fetch_field_direct($result, 4);
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
+                <form id="EditOpdrachtForm" method="post" action="EditOpdrachtSQL.php">
+                    <input type="text" id="EditOpdrachtTitle" placeholder="Title" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
+                    <input type="text" id="EditOpdrachtOmschrijving" placeholder="Omschrijving" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
+                    <input type="text" id="EditOpdrachtDownloadlink" placeholder="Download Link" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
 
-                <?php
-                echo "<table><thead>";
-                echo
-                    "<tr>".
-                    "<th width='200'>" . "$finfo0->name" . "</th>".
-                    "<th width='200'>" . "$finfo1->name" . "</th>".
-                    "<th width='200'>" . "$finfo2->name" . "</th>".
-                    "<th width='200'>" . "$finfo3->name" . "</th>".
-                    "<th width='200'>" . "$finfo4->name" . "</th>".
-                    "</tr></thead><tbody>";
-
-                // places data
-                while($row = $result->fetch_assoc()) {
-                    echo
-                        "<tr>".
-                        "<td width='200'>"  .$row["VakID"] . "</td>".
-                        "<td width='200'>" . $row["OpdrachtID"] . "</td>".
-                        "<td width='200'>" . $row["Titel"] . "</td>".
-                        "<td width='200'>" . $row["Omschrijving"] . "</td>".
-                        "<td width='200'>" . $row["Downloadlink"] . "</td>".
-                       //"<th width='200'>" . "<a href='delete_opdracht.php?OpdrachtID=".$row['OpdrachtID']."&VakID=".$row['VakID']."'> Delete </a>" . "</th>".
-                        // "<th width='200'>" . "<a href='edit.php?OpdrachtID=" . $row['OpdrachtID'] . "&VakID=" . $row['VakID'] . '&rest=' . $row['Titel']. $row['Omschrijving']. $row['Downloadlink'] ."'> Edit </a>" . "</th>".
-                        "</tr>"; }
-                echo "</tbody></table>";
-
-                ?>
-            <!--    <form id="loginForm" action="redirect.php" method="post">
-                    <input type="text" name="user" placeholder="Gebruikersnaam" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
-                    <input type="password" name="pass" placeholder="Wachtwoord" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button id="loginSubmit" class="pull-right btn btn-default" type="submit">Login</button>
-                </form>-->
-                </br>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">Delete</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">Save</button>
+                    <button name="EditDeleteVak" id="EditDeleteOpdracht" type="submit" class="btn btn-default pull-right">Delete</button>
+                    <button name="SubmitOpdrachtEdit" id="editOpdrachtSubmit" class="pull-right btn btn-default" type="submit">Save</button>
+                </form>
+
             </div>
         </div>
 
@@ -78,13 +32,36 @@ $finfo4 = mysqli_fetch_field_direct($result, 4);
 
 
 <script>
-    $("#loginSubmit").click(function(e) {
+    $("#editOpdrachtSubmit").click(function(e) {
         e.preventDefault();
         $.ajax({
             type:'POST',
-            url:'redirect.php',
-            data: { user: $('#loginForm').children('[name="user"]').val(), pass: $('#loginForm').children('[name="pass"]').val()},
+            url:'EditOpdrachtSQL.php',
+            data: { Title: $('#EditOpdrachtTitle').val(),
+                    Omschrijving: $('#EditOpdrachtOmschrijving').val(),
+                    DownloadLink: $('#EditOpdrachtDownloadlink').val(),
+                    vakid:lastClickedEditVak,
+                    OpdrachtID: LastClickedEditOpdracht},
+
+
             success:function(response){
+                alert(lastClickedEditVak,LastClickedEditOpdracht);
+                location.reload();
+            }
+        });
+    });
+
+    $("#EditDeleteOpdracht").click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:'DeleteOpdrachtSQL.php',
+            data: { Delvakid:lastClickedEditVak,
+                    DelOpdrachtID: LastClickedEditOpdracht},
+
+
+            success:function(response){
+                alert(lastClickedEditVak);
                 location.reload();
             }
         });
