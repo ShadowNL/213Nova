@@ -1,5 +1,14 @@
 var lastClickedEditVak;
 var LastClickedEditSector;
+var LastClickedEditOpdracht;
+
+function initEditOpdracht() {
+    $('.opdrachten-label-download-btn').click(function () {
+        console.log('print!', $(this).attr('opdrachtid'));
+        LastClickedEditOpdracht = $(this).attr('opdrachtid');
+        lastClickedEditVak = $(this).attr('vakid');
+    });
+}
 
 $(document).ready(function () {
     //initial
