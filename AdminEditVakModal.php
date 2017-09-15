@@ -1,25 +1,24 @@
 <!-- Modal -->
 <div id="AdminEditVakModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
+    <div class="modal-dialog modal-admin-login">
         <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="panel-heading-custom" style="background-color:#ffae63; min-height:25px; height:15%;">
-                    <div style="color:white; text-align:center; font-weight: bold; font-size:32px;">
-                        Vak weizigen
-                    </div>
-                </div>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="panel-heading-custom header-admin-login">
+            <div class="headertext-admin-login">
+                Vak weizigen
             </div>
-            <div class="modal-body">
+        </div>
+        <div class="panel-body body-admin-login">
+            <div class="form-admin-login">
                 <form id="vakEditForm" method="post" action="EditSubjectSQL.php">
-                    <input type="text" name="newvaknaam" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button name="EditDeleteVak" id="EditDeleteVak" type="submit" class="btn btn-default pull-right">Delete</button>
-                    <button name="submitedit" id="editVakSubmit" class="pull-right btn btn-default" type="submit">Save</button>
-                </form>
+                    <input type="text" name="newvaknaam" placeholder="De naam van het vak" class="input-admin-login"><br><br>
+                    <!--GETERROR MOET HIER-->
+                    <!--FORM WORD NIET GESLOTEN-->
             </div>
+        </div>
+        <div class="panel-footer footer-admin-login">
+            <button type="button" class="pull-left button-admin-login" data-dismiss="modal">Annuleren</button>
+            <button name="EditDeleteVak" id="EditDeleteVak" type="submit" class="pull-right button-admin-login">Verwijderen</button>
+            <button name="submitedit" id="editVakSubmit" class="pull-right button-admin-login" type="submit">Opslaan</button>
         </div>
     </div>
 </div>
