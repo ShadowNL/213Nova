@@ -11,6 +11,8 @@ function initEditOpdracht() {
 }
 
 $(document).ready(function () {
+
+
     //initial
 
     // $('#addsubject a').click(function () {
@@ -18,6 +20,26 @@ $(document).ready(function () {
     //     $('#content').load(page + '.php');
     //     return false;
     // });
+    $('.vakeditbtn').click(function () {
+        console.log('FOOOOOk')
+        var VakID = $(this).attr('vak');
+        var SectorID = $(this).attr('sector');
+        lastClickedEditVak = VakID;
+        LastClickedEditSector = SectorID;
+        var modalpagevak = 'modalindexvak.php?SectoreditID=' + SectorID + '&VakeditID=' + VakID;
+        $('#modalcontentvak').load(modalpagevak);
+    })
+
+    $('.opdrachten-label-download-btn').click(function(){
+
+        var VakID = $(this).attr('VakID');
+        var OpdrachtID = $(this).attr('OpdrachtID');
+        lastClickedEditVak = VakID;
+        LastClickedEditOpdracht = OpdrachtID;
+        var modalpage = 'modalindex.php?VakID=' + VakID + '&OpdrachtID=' + OpdrachtID;
+        $('#modalcontent').load(modalpage);
+        
+    })
 
     $('.menuitem:not(#addsubject)').click(function () {
         console.log($(this).attr('vak'), $(this).attr('sector'));
@@ -30,13 +52,16 @@ $(document).ready(function () {
         window.history.replaceState(null, null, '2_Sectorhome.php?SectorID=' + SectorID + '&VakID=' + VakID + window.location.hash);
     });
 
+
+
     $('#btn-logout').click(function() {
         $.ajax({
             type:'POST',
             url:'Logout.php',
             data: { },
             success: function(response){
-                location.reload();
+                window.history.replaceState(null, null, '2_Sectorhome.php?SectorID=' + SectorID + '&VakID=' + VakID + window.location.hash);
+
             }
         });
     });
