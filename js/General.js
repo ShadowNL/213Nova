@@ -54,14 +54,15 @@ $(document).ready(function () {
 
 
 
-    $('#btn-logout').click(function() {
+    $('#btn-logout').click(function(e) {
+        console.log('i work?');
         $.ajax({
             type:'POST',
             url:'Logout.php',
             data: { },
             success: function(response){
-                window.history.replaceState(null, null, '2_Sectorhome.php?SectorID=' + SectorID + '&VakID=' + VakID + window.location.hash);
-
+                //window.history.replaceState(null, null, '2_Sectorhome.php?SectorID=' + SectorID + '&VakID=' + VakID + window.location.hash);
+                location.reload();
             }
         });
     });
