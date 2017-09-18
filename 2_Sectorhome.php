@@ -64,10 +64,8 @@ function createNav() {
     if ($result && $result->num_rows > 0) {
         //output data of each row
         while ($row = $result->fetch_assoc()) {
-
 //            echo '<center><div sector=' . $row["SectorID"] . ' vak=' . $row["VakID"] . ' class="MenuItem">' .
 //            $row["Vaknaam"] . "</div></center>";
-
             if (isset($_SESSION['username'])) {
                 echo '<center><div sector=' . $row["SectorID"] . ' vak=' . $row["VakID"] . ' class="MenuItem">' . $row["Vaknaam"] .
                     "<div id='Editvak-Btn' class='vakeditbtn' sector=".$row['SectorID']." vak=".$row['VakID']." naam=".$row['Vaknaam']." type=\"button\" data-toggle=\"modal\" data-target=\"#AdminEditVakModal\" style='display:inline; float:right; width:30px; height:25px; cursor: pointer;' >
@@ -81,7 +79,7 @@ function createNav() {
             }
         }
     } else {
-        echo "Geen vakken in deze sector gevonden";
+        echo '<font color="FF0000">Geen vakken in deze sector gevonden</font>';
     }
 }
 
