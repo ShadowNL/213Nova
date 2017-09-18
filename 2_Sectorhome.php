@@ -195,10 +195,17 @@ function generateOpdrachten() {
     var navbar = document.getElementById("navspacer");
     var sidenav = document.getElementById("mySidenav");
     var main = document.getElementById("main");
-
+    
+    openNav();
+    //we willen dat de sidebar altijd opent on-refresh.
+    //je hoeft de "nav-open" field niet in de GET door te geven als
+    //je toch altijd de sidebar open maakt
+    /*
     if (navOpen = window.location.hash.substr(1) == "nav-open") {
         openNav();
-    }
+    } else {
+        
+    }*/
 
     <?php
     echo '$("#content").load("index.php?SectorID=' . $SectorID . '&VakID=' . $VakID . '");';
