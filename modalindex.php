@@ -10,17 +10,23 @@ $Titel = $row['Titel'];
 $Omschrijving = $row['Omschrijving'];
 $Downloadlink = $row['Downloadlink'];
 
-
 ?>
-<form id="EditOpdrachtForm" method="post" action="EditOpdrachtSQL.php">
-    <input type="text" id="EditOpdrachtTitle" value="<?php echo $Titel; ?>" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
-    <input type="text" id="EditOpdrachtOmschrijving" value="<?php echo $Omschrijving; ?>" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
-    <input type="text" id="EditOpdrachtDownloadlink" value="<?php echo $Downloadlink; ?>" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
-
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button name="EditDeleteVak" id="EditDeleteOpdracht" type="submit" class="btn btn-default pull-right">Delete</button>
-    <button name="SubmitOpdrachtEdit" id="editOpdrachtSubmit" class="pull-right btn btn-default" type="submit">Save</button>
-</form>
+<!--button type="button" class="close" data-dismiss="modal">&times;</button-->
+<div class="panel-body body-admin-login">
+    <div class="form-admin-login">
+        <form id="EditOpdrachtForm" method="post" action="EditOpdrachtSQL.php"><br>
+        <input type="text" id="EditOpdrachtTitle" class="input-admin-login" value="<?php echo $Titel; ?>"><br><br>
+        <input type="text" id="EditOpdrachtOmschrijving" class="input-admin-login" value="<?php echo $Omschrijving; ?>"><br><br>
+        <input type="text" id="EditOpdrachtDownloadlink" class="input-admin-login" value="<?php echo $Downloadlink; ?>">
+        <!--GETERROR MOET HIER-->
+        <!--FORM WORD NIET GESLOTEN-->
+    </div>
+</div>
+<div class="panel-footer footer-admin-login">
+    <button type="button" class="button-admin-login pull-left" data-dismiss="modal">Close</button>
+    <button name="EditDeleteVak"  class="button-admin-login pull-right" id="EditDeleteOpdracht" type="submit">Delete</button>
+    <button name="SubmitOpdrachtEdit" class="pull-right button-admin-login" id="editOpdrachtSubmit" type="submit">Save</button>
+</div>
 <script>
     $("#editOpdrachtSubmit").click(function(e) {
         e.preventDefault();
@@ -32,7 +38,6 @@ $Downloadlink = $row['Downloadlink'];
                 DownloadLink: $('#EditOpdrachtDownloadlink').val(),
                 vakid:lastClickedEditVak,
                 OpdrachtID: LastClickedEditOpdracht},
-
 
             success:function(response){
                 alert(lastClickedEditVak,LastClickedEditOpdracht);

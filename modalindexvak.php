@@ -8,12 +8,20 @@ $result = $conStr->query($GetNamessql);
 $row = $result->fetch_assoc();
 $VakNaam = $row['Vaknaam'];
 ?>
-<form id="vakEditForm" method="post" action="EditSubjectSQL.php">
-    <input type="text" name="newvaknaam" value="<?php echo $VakNaam; ?>" style="min-width:150px;width:100%;font-size:1.5em;font-size:1.5vw"><br><br>
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button name="EditDeleteVak" id="EditDeleteVak" type="submit" class="btn btn-default pull-right">Delete</button>
-    <button name="submitedit" id="editVakSubmit" class="pull-right btn btn-default" type="submit">Save</button>
-</form>
+<!--button type="button" class="close" data-dismiss="modal">&times;</button-->
+<div class="panel-body body-admin-login">
+    <div class="form-admin-login">
+        <form id="vakEditForm" method="post" action="EditSubjectSQL.php">
+        <input type="text" name="newvaknaam" value="<?php echo $VakNaam; ?>" class="input-admin-login"><br><br>
+        <!--GETERROR MOET HIER-->
+        <!--FORM WORD NIET GESLOTEN-->
+    </div>
+</div>
+<div class="panel-footer footer-admin-login">
+    <button type="button" class="pull-left button-admin-login" data-dismiss="modal">Close</button>
+    <button name="EditDeleteVak" class="pull-right button-admin-login" id="EditDeleteVak" type="submit">Delete</button>
+    <button name="submitedit" class="pull-right button-admin-login" id="editVakSubmit" type="submit">Save</button>
+</div>
 <script>
     $('#editVakSubmit').click(function(e) {
         console.log($('#vakEditForm').children('[name="newvaknaam"]').val());
