@@ -11,9 +11,9 @@
         <div class="panel-body body-admin-login">
             <div class="form-admin-login">
                 <form id="addopdrachtForm" action="AddOpdrachtSQL.php" method="post"><br>
-                <input type="text" class="input-admin-login" name="titel" placeholder="titel"><br><br>
-                <input type="text" class="input-admin-login" name="omschrijving" placeholder="omschrijving"><br><br>
-                <input type="text" class="input-admin-login" name="downloadlink" placeholder="downloadlink">
+                <input type="text" id="addtitel" class="input-admin-login" name="titel" placeholder="titel"><br><br>
+                <input type="text" id="addomschrijving" class="input-admin-login" name="omschrijving" placeholder="omschrijving"><br><br>
+                <input type="text" id="adddownload" class="input-admin-login" name="downloadlink" placeholder="downloadlink">
             </div>
         </div>
         <div class="panel-footer footer-admin-login">
@@ -29,12 +29,15 @@
             type:'POST',
             url:'AddOpdrachtSQL.php',
             data: {
-                titel: $('#addopdrachtForm').children('[name="titel"]').val(),
-                omschrijving: $('#addopdrachtForm').children('[name="omschrijving"]').val(),
-                downloadlink: $('#addopdrachtForm').children('[name="downloadlink"]').val(),
+                titel: $('#addtitel').val(),
+                omschrijving: $('#addomschrijving').val(),
+                downloadlink: $('#adddownload').val(),
                 vak:$('#addOpdrachtBtn').attr('vakid'),
             },
             success: function(response){
+                console.log($('#addtitel').val());
+                console.log($('#addomschrijving').val());
+                console.log($('#adddownload').val())
                 alert($('#addOpdrachtBtn').attr('vakid'));
                 location.reload();
 
