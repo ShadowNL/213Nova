@@ -2,6 +2,7 @@
 <div id="AdminEditVakModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-admin-login">
         <!-- Modal content-->
+        <!--div class="panel panel-default" -->
         <div class="panel-heading-custom header-admin-login">
             <div class="headertext-admin-login">
                 Vak weizigen

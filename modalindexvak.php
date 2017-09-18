@@ -8,6 +8,7 @@ $result = $conStr->query($GetNamessql);
 $row = $result->fetch_assoc();
 $VakNaam = $row['Vaknaam'];
 ?>
+<<<<<<< HEAD
 <div class="panel-body body-admin-login">
     <div class="form-admin-login">
         <form id="vakEditForm" method="post" action="EditSubjectSQL.php">
