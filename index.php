@@ -17,6 +17,7 @@ $sqlNav = "SELECT * FROM opdrachten WHERE VakID = " . $VakID;
 $result = $conStr->query($sqlNav);
 $userSetSession = isset($_SESSION['username']);
 
+
 //Produceer AddOpdracht-knop
 function genAddOpdrachtButton($VakID){
     echo    '<div class="opdrachten-label" style="height: 30px;">
@@ -55,9 +56,12 @@ function genOpdrachtLabel($OpdrachtID,$VakID,$titel,$omschrijving,$verantwoordel
                     </div>";
     //Als user ingelogd is, laat EDIT knop zien
     if ($userSetSession) {
-        echo        "<div id='btnEditOpdrachtmodal' class='opdrachten-label-download-btn' VakID='" . $VakID . "' OpdrachtID='" . $OpdrachtID . "' data-toggle=\"modal\" data-target=\"#adminEditModal\">
-                        <a href='#'>Edit</a>
+        echo        "<div id='btnEditOpdrachtmodal' class='opdrachten-label-download-btn' VakID='" . $VakID . "' OpdrachtID='" . $OpdrachtID . "'  >
+                        <a data-toggle=\"modal\" href='#adminEditModal'>Edit</a>
                     </div>";
+//        "<div id='btnEditOpdrachtmodal' class='opdrachten-label-download-btn' VakID='" . $VakID . "' OpdrachtID='" . $OpdrachtID . "' data-toggle=\"modal\" data-target=\"#adminEditModal\">
+//                        <a href='#adminEditModal'>Edit</a>
+//                    </div>";
     }
     echo        "</div>
             </div>";
@@ -91,4 +95,22 @@ if ($result && $result->num_rows > 0) {
     }
 }
 ?>
+<script src="js/General.js"></script>
+
+<script>
+    $(".opdrachten-label-download-btn").click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:'AdminEditOpdrachtModal.php',
+            data: { Delvakid:lastClickedEditVak,
+                DelOpdrachtID: LastClickedEditOpdracht},
+
+
+            success:function(response){
+                alert(LastClickedEditOpdracht);
+            }
+        });
+    });
+</script>
 

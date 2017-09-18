@@ -41,6 +41,7 @@
             success: function(response){
                 alert($('#addOpdrachtBtn').attr('vakid'));
                 location.reload();
+
             }
         });
     });

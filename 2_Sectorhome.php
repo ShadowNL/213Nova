@@ -70,7 +70,7 @@ function createNav() {
 
             if (isset($_SESSION['username'])) {
                 echo '<center><div sector=' . $row["SectorID"] . ' vak=' . $row["VakID"] . ' class="MenuItem">' . $row["Vaknaam"] .
-                    "<div id='Editvak-Btn' sector=".$row['SectorID']." vak=".$row['VakID']." naam=".$row['Vaknaam']." type=\"button\" data-toggle=\"modal\" data-target=\"#AdminEditVakModal\" style='display:inline; float:right; width:30px; height:25px; cursor: pointer;' >
+                    "<div id='Editvak-Btn' class='vakeditbtn' sector=".$row['SectorID']." vak=".$row['VakID']." naam=".$row['Vaknaam']." type=\"button\" data-toggle=\"modal\" data-target=\"#AdminEditVakModal\" style='display:inline; float:right; width:30px; height:25px; cursor: pointer;' >
                     <p class=\"edit-subject\" href=\"#\">edit</p>
                     </div>
                 </div></center>";
